@@ -1,325 +1,404 @@
 /* =========================================================
-   NEXROOR - COMPLETE APP.JS
-   Product details + gallery + search + cart + checkout
+   NEXROOR - APP.JS
+   Product details + search + categories + cart + checkout
    ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PRODUCTS
+   --------------------------------------------------------- */
 
 const products = [
 
   {
     id: 1,
-    name: "Waffle Maker",
-    cat: "Home & Kitchen",
-    price: 599,
-    old: 999,
-    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Wireless ANC Headphones",
+    cat: "Electronics",
+    price: 2499,
+    old: 3499,
+
     description:
-      "Compact waffle maker designed for making delicious homemade waffles quickly and easily. A useful addition to modern kitchens and a great everyday breakfast appliance.",
+      "Enjoy immersive sound with wireless ANC headphones designed for music, calls and everyday use.",
+
     features: [
-      "Non-stick cooking surface",
-      "Compact countertop design",
-      "Easy to clean",
-      "Suitable for everyday home use"
+      "Active noise cancellation",
+      "Wireless Bluetooth connection",
+      "Comfortable over-ear design",
+      "Built for everyday listening",
+      "Rechargeable battery"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85"
     ]
   },
+
 
   {
     id: 2,
-    name: "Pack of 2 Oil Sprayer for Cooking",
-    cat: "Home & Kitchen",
-    price: 499,
-    old: 799,
-    image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c25?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Minimal Smart Watch",
+    cat: "Electronics",
+    price: 1999,
+    old: 2999,
+
     description:
-      "Convenient cooking oil sprayers designed to help control the amount of oil used while cooking, grilling, baking or roasting.",
+      "A modern smart watch with a clean design for everyday activity tracking and notifications.",
+
     features: [
-      "Pack of 2",
-      "Easy oil control",
-      "Reusable design",
-      "Suitable for cooking and baking"
+      "Modern minimal design",
+      "Activity tracking",
+      "Digital display",
+      "Comfortable wrist fit",
+      "Suitable for everyday use"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=900&q=85"
     ]
   },
+
 
   {
     id: 3,
-    name: "Multi Functional Vegetable Peeler",
-    cat: "Home & Kitchen",
-    price: 399,
-    old: 649,
-    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Everyday Backpack",
+    cat: "Fashion",
+    price: 1299,
+    old: 1799,
+
     description:
-      "A practical kitchen peeler for preparing vegetables and everyday cooking ingredients quickly.",
+      "A practical everyday backpack suitable for work, college, travel and daily carrying.",
+
     features: [
-      "Easy to use",
-      "Comfortable grip",
-      "Useful everyday kitchen tool",
-      "Compact and easy to store"
+      "Spacious main compartment",
+      "Everyday carry design",
+      "Comfortable shoulder straps",
+      "Suitable for work and travel",
+      "Modern minimalist look"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1556306535-38febf6782e7?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=900&q=85"
     ]
   },
+
 
   {
     id: 4,
-    name: "X Type Mop",
-    cat: "Home Accessories",
-    price: 699,
-    old: 999,
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Portable Coffee Maker",
+    cat: "Home & Kitchen",
+    price: 1799,
+    old: 2499,
+
     description:
-      "A convenient cleaning mop designed to make everyday floor cleaning easier while helping you reach difficult areas.",
+      "A compact coffee-making solution designed for convenient use at home, work or while travelling.",
+
     features: [
-      "Rotating mop head",
-      "Long handle",
-      "Useful for multiple floor types",
-      "Easy rinse and wring"
+      "Compact design",
+      "Easy to carry",
+      "Suitable for home and travel",
+      "Simple operation",
+      "Modern appearance"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85"
     ]
   },
+
 
   {
     id: 5,
-    name: "Vacuum Storage Bag",
-    cat: "Home Accessories",
-    price: 799,
-    old: 1199,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Sunglasses Classic",
+    cat: "Fashion",
+    price: 899,
+    old: 1299,
+
     description:
-      "Space-saving storage bags designed to compress clothes, bedding and other bulky household items for easier storage and travel.",
+      "Classic everyday sunglasses with a versatile style that works with different outfits.",
+
     features: [
-      "Space saving design",
-      "Useful for clothes and bedding",
-      "Helps protect stored items",
-      "Great for travel and home organisation"
+      "Classic frame design",
+      "Lightweight construction",
+      "Everyday fashion accessory",
+      "Versatile styling",
+      "Comfortable fit"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1511499767150-5b5e8f5c7d9b?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=85"
     ]
   },
+
 
   {
     id: 6,
-    name: "USB Charging 5 in 1 Magic Brush",
-    cat: "Home Accessories",
-    price: 899,
-    old: 1299,
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Modern Desk Lamp",
+    cat: "Home & Kitchen",
+    price: 1099,
+    old: 1599,
+
     description:
-      "Rechargeable multi-purpose cleaning brush designed for sinks, tiles, bathrooms, tubs and other household surfaces.",
+      "A modern desk lamp designed to add practical lighting to your workspace, study area or bedside table.",
+
     features: [
-      "USB rechargeable",
-      "Multiple brush heads",
-      "Suitable for wet areas",
-      "Helps reduce cleaning effort"
+      "Modern minimalist design",
+      "Suitable for desks and tables",
+      "Compact footprint",
+      "Useful for study and work",
+      "Contemporary appearance"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1534281308479-cf7a0c6f3a58?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=85"
     ]
   },
+
 
   {
     id: 7,
-    name: "Sunset Light Humidifier",
-    cat: "Home Accessories",
-    price: 899,
-    old: 1299,
-    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Skincare Essentials",
+    cat: "Beauty",
+    price: 799,
+    old: 1199,
+
     description:
-      "Compact decorative humidifier and ambient light designed to add a relaxing atmosphere to bedrooms, desks and living spaces.",
+      "A convenient skincare essentials collection designed for simple everyday personal-care routines.",
+
     features: [
-      "Ambient lighting",
-      "Compact design",
-      "Suitable for bedroom or desk",
-      "Decorative home accessory"
+      "Everyday skincare collection",
+      "Easy to use",
+      "Suitable for personal-care routines",
+      "Convenient packaging",
+      "Ideal for everyday use"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85"
     ]
   },
 
+
   {
     id: 8,
-    name: "Water Dental Flosser",
-    cat: "Personal Care",
-    price: 999,
-    old: 1599,
-    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85"
-    ],
+    name: "Compact Bluetooth Speaker",
+    cat: "Electronics",
+    price: 1399,
+    old: 1899,
+
     description:
-      "Portable rechargeable water flosser designed for convenient everyday oral-care routines at home or while travelling.",
+      "A compact Bluetooth speaker made for convenient wireless listening at home, outdoors and while travelling.",
+
     features: [
-      "USB rechargeable",
-      "Portable design",
-      "Multiple cleaning modes",
-      "Suitable for home and travel"
+      "Bluetooth wireless connection",
+      "Compact portable design",
+      "Suitable for everyday listening",
+      "Easy to carry",
+      "Modern appearance"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=85"
     ]
   }
 
 ];
 
 
-/* =========================================================
-   STATE
-   ========================================================= */
+/* ---------------------------------------------------------
+   CATEGORY IMAGES
+   --------------------------------------------------------- */
+
+const categoryImages = {
+
+  "Electronics":
+    "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=85",
+
+  "Fashion":
+    "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=85",
+
+  "Home & Kitchen":
+    "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=700&q=85",
+
+  "Beauty":
+    "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
+
+};
+
+
+/* ---------------------------------------------------------
+   CART
+   --------------------------------------------------------- */
 
 let cart = JSON.parse(
   localStorage.getItem("nexroor_cart") || "[]"
 );
 
-let currentProduct = null;
-let currentImageIndex = 0;
 
+/* ---------------------------------------------------------
+   HELPER
+   --------------------------------------------------------- */
 
-/* =========================================================
-   HELPERS
-   ========================================================= */
+const $ = selector =>
+  document.querySelector(selector);
 
-const $ = selector => document.querySelector(selector);
 
 function money(value) {
-  return "₹" + Number(value).toLocaleString("en-IN");
+
+  return "₹" +
+    Number(value).toLocaleString("en-IN");
+
 }
 
+
+/* ---------------------------------------------------------
+   SAVE CART
+   --------------------------------------------------------- */
+
 function saveCart() {
+
   localStorage.setItem(
     "nexroor_cart",
     JSON.stringify(cart)
   );
+
 }
 
+
+/* ---------------------------------------------------------
+   TOAST
+   --------------------------------------------------------- */
+
 function toast(message) {
+
   const box = $("#toast");
 
   if (!box) return;
 
   box.textContent = message;
+
   box.classList.add("show");
 
   setTimeout(() => {
+
     box.classList.remove("show");
+
   }, 2200);
+
 }
 
 
-/* =========================================================
-   CATEGORIES
-   ========================================================= */
+/* ---------------------------------------------------------
+   RENDER CATEGORIES
+   --------------------------------------------------------- */
 
 function renderCategories() {
 
   const categories = [
-    ...new Set(products.map(product => product.cat))
+    ...new Set(
+      products.map(product => product.cat)
+    )
   ];
 
-  const categoryGrid = $("#categoryGrid");
 
-  if (categoryGrid) {
+  $("#categoryGrid").innerHTML =
+    categories.map(category => `
 
-    categoryGrid.innerHTML = categories.map(category => {
+      <button
+        class="category-card"
+        type="button"
+        onclick="selectCategory('${category}')">
 
-      const product = products.find(
-        item => item.cat === category
-      );
+        <img
+          src="${categoryImages[category]}"
+          alt="${category}"
+          loading="lazy">
 
-      return `
-        <button
-          class="category-card"
-          onclick="selectCategory('${category}')"
-        >
-          <img
-            src="${product.image}"
-            alt="${category}"
-            loading="lazy"
-          >
-
-          <span>${category}</span>
-        </button>
-      `;
-
-    }).join("");
-  }
-
-
-  const filter = $("#categoryFilter");
-
-  if (filter) {
-
-    filter.innerHTML =
-      `<option value="all">All categories</option>` +
-
-      categories.map(category => `
-        <option value="${category}">
+        <span>
           ${category}
-        </option>
-      `).join("");
-  }
+        </span>
+
+      </button>
+
+    `).join("");
+
+
+  $("#categoryFilter").innerHTML =
+
+    `<option value="all">
+      All categories
+    </option>` +
+
+    categories.map(category => `
+
+      <option value="${category}">
+        ${category}
+      </option>
+
+    `).join("");
+
 }
 
+
+/* ---------------------------------------------------------
+   SELECT CATEGORY
+   --------------------------------------------------------- */
 
 function selectCategory(category) {
 
-  if ($("#categoryFilter")) {
-    $("#categoryFilter").value = category;
-  }
+  $("#categoryFilter").value = category;
 
   renderProducts();
 
-  const shop = $("#shop");
-
-  if (shop) {
-    shop.scrollIntoView({
+  document
+    .querySelector("#shop")
+    .scrollIntoView({
       behavior: "smooth"
     });
-  }
+
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    PRODUCT CARD
-   ========================================================= */
+   --------------------------------------------------------- */
 
 function productCard(product) {
 
   return `
-    <article class="product-card">
 
-      <div
-        class="product-image-link"
-        onclick="openProduct(${product.id})"
-        style="cursor:pointer"
-      >
+    <article
+      class="product-card"
+      onclick="openProduct(${product.id})">
+
+      <div class="product-image-wrap">
+
         <img
-          src="${product.image}"
+          src="${product.images[0]}"
           alt="${product.name}"
-          loading="lazy"
-        >
+          loading="lazy">
+
+        <span class="view-product">
+          View details
+        </span>
+
       </div>
+
 
       <div class="product-info">
 
@@ -327,12 +406,10 @@ function productCard(product) {
           ${product.cat}
         </p>
 
-        <h3
-          onclick="openProduct(${product.id})"
-          style="cursor:pointer"
-        >
+        <h3>
           ${product.name}
         </h3>
+
 
         <div class="price">
 
@@ -346,20 +423,28 @@ function productCard(product) {
 
         </div>
 
-        <div class="product-actions">
+
+        <div
+          class="product-actions"
+          onclick="event.stopPropagation()">
 
           <button
             class="secondary"
-            onclick="openProduct(${product.id})"
-          >
-            Details
+            type="button"
+            onclick="addToCart(${product.id})">
+
+            Add to cart
+
           </button>
+
 
           <button
             class="primary"
-            onclick="addToCart(${product.id})"
-          >
-            Add to cart
+            type="button"
+            onclick="buyNow(${product.id})">
+
+            Buy now
+
           </button>
 
         </div>
@@ -367,515 +452,294 @@ function productCard(product) {
       </div>
 
     </article>
+
   `;
+
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    RENDER PRODUCTS
-   ========================================================= */
+   --------------------------------------------------------- */
 
-function renderProducts(customList = null) {
+function renderProducts(listOverride = null) {
 
-  let list = customList
-    ? [...customList]
-    : [...products];
+  let list =
+    listOverride
+      ? [...listOverride]
+      : [...products];
+
 
   const category =
-    $("#categoryFilter")?.value || "all";
+    $("#categoryFilter").value;
 
   const sort =
-    $("#sortFilter")?.value || "featured";
+    $("#sortFilter").value;
 
 
-  if (!customList && category !== "all") {
+  if (!listOverride && category !== "all") {
 
     list = list.filter(
-      product => product.cat === category
+      product =>
+        product.cat === category
     );
+
   }
 
 
   if (sort === "low") {
 
     list.sort(
-      (a, b) => a.price - b.price
+      (a, b) =>
+        a.price - b.price
     );
+
   }
 
 
   if (sort === "high") {
 
     list.sort(
-      (a, b) => b.price - a.price
+      (a, b) =>
+        b.price - a.price
     );
+
   }
-
-
-  const grid = $("#productGrid");
-
-  if (!grid) return;
 
 
   if (!list.length) {
 
-    grid.innerHTML = `
-      <div class="empty">
+    $("#productGrid").innerHTML = `
+
+      <div class="empty product-empty">
+
         No products found.
+
       </div>
+
     `;
 
     return;
+
   }
 
 
-  grid.innerHTML = list
-    .map(productCard)
-    .join("");
+  $("#productGrid").innerHTML =
+    list.map(productCard).join("");
+
 }
 
 
-/* =========================================================
-   PRODUCT DETAILS
-   ========================================================= */
-
-function createProductModal() {
-
-  if ($("#productModal")) return;
-
-
-  document.body.insertAdjacentHTML(
-    "beforeend",
-    `
-      <div
-        class="modal"
-        id="productModal"
-      >
-
-        <div
-          class="modal-card product-detail-card"
-          style="max-width:1000px"
-        >
-
-          <button
-            class="modal-close"
-            onclick="closeProduct()"
-          >
-            ×
-          </button>
-
-          <div
-            style="
-              display:grid;
-              grid-template-columns:1fr 1fr;
-              gap:35px;
-            "
-            class="product-detail-layout"
-          >
-
-            <div>
-
-              <img
-                id="detailMainImage"
-                src=""
-                alt=""
-                style="
-                  width:100%;
-                  height:450px;
-                  object-fit:cover;
-                  border-radius:20px;
-                  display:block;
-                "
-              >
-
-              <div
-                id="detailThumbnails"
-                style="
-                  display:flex;
-                  gap:10px;
-                  margin-top:12px;
-                  overflow:auto;
-                "
-              ></div>
-
-            </div>
-
-
-            <div>
-
-              <p
-                class="eyebrow"
-                id="detailCategory"
-              ></p>
-
-              <h2
-                id="detailName"
-                style="
-                  font-size:38px;
-                  margin:0 0 15px;
-                "
-              ></h2>
-
-
-              <div
-                class="price"
-                style="margin:15px 0"
-              >
-
-                <strong
-                  id="detailPrice"
-                ></strong>
-
-                <del
-                  id="detailOldPrice"
-                ></del>
-
-              </div>
-
-
-              <p
-                id="detailDescription"
-                style="
-                  color:#666;
-                  line-height:1.7;
-                "
-              ></p>
-
-
-              <h3>
-                Product features
-              </h3>
-
-              <ul
-                id="detailFeatures"
-                style="
-                  padding-left:20px;
-                  line-height:2;
-                "
-              ></ul>
-
-
-              <div
-                style="
-                  display:grid;
-                  grid-template-columns:1fr 1fr;
-                  gap:10px;
-                  margin-top:25px;
-                "
-              >
-
-                <button
-                  class="secondary"
-                  id="detailCartBtn"
-                >
-                  Add to cart
-                </button>
-
-                <button
-                  class="primary"
-                  id="detailBuyBtn"
-                >
-                  Buy now
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    `
-  );
-}
-
+/* ---------------------------------------------------------
+   OPEN PRODUCT DETAILS
+   --------------------------------------------------------- */
 
 function openProduct(id) {
 
-  createProductModal();
-
-  const product = products.find(
-    item => item.id === id
-  );
-
-  if (!product) return;
-
-  currentProduct = product;
-  currentImageIndex = 0;
-
-  $("#detailCategory").textContent =
-    product.cat;
-
-  $("#detailName").textContent =
-    product.name;
-
-  $("#detailPrice").textContent =
-    money(product.price);
-
-  $("#detailOldPrice").textContent =
-    money(product.old);
-
-  $("#detailDescription").textContent =
-    product.description;
+  const product =
+    products.find(
+      item => item.id === Number(id)
+    );
 
 
-  $("#detailFeatures").innerHTML =
-    product.features.map(feature => `
-      <li>${feature}</li>
-    `).join("");
+  if (!product) {
 
+    toast("Product not found");
 
-  renderDetailImage();
+    return;
 
-
-  $("#detailCartBtn").onclick = () => {
-    addToCart(product.id);
-  };
-
-
-  $("#detailBuyBtn").onclick = () => {
-    buyNow(product.id);
-  };
-
-
-  $("#productModal").classList.add("open");
-
-  document.body.style.overflow = "hidden";
-}
-
-
-function renderDetailImage() {
-
-  if (!currentProduct) return;
-
-  const images =
-    currentProduct.images || [
-      currentProduct.image
-    ];
-
-
-  $("#detailMainImage").src =
-    images[currentImageIndex];
-
-  $("#detailMainImage").alt =
-    currentProduct.name;
-
-
-  $("#detailThumbnails").innerHTML =
-    images.map((image, index) => `
-      <button
-        onclick="changeDetailImage(${index})"
-        style="
-          border:2px solid ${
-            index === currentImageIndex
-              ? "#111"
-              : "#ddd"
-          };
-          padding:0;
-          border-radius:10px;
-          overflow:hidden;
-          background:white;
-          flex:0 0 75px;
-        "
-      >
-
-        <img
-          src="${image}"
-          alt=""
-          style="
-            width:75px;
-            height:75px;
-            object-fit:cover;
-            display:block;
-          "
-        >
-
-      </button>
-    `).join("");
-}
-
-
-function changeDetailImage(index) {
-
-  currentImageIndex = index;
-
-  renderDetailImage();
-}
-
-
-function closeProduct() {
-
-  const modal = $("#productModal");
-
-  if (modal) {
-    modal.classList.remove("open");
   }
 
-  document.body.style.overflow = "";
-}
+
+  const details =
+    $("#productDetails");
 
 
-/* =========================================================
-   SEARCH
-   ========================================================= */
+  details.innerHTML = `
 
-function createSearchUI() {
-
-  if ($("#searchPanel")) return;
+    <div class="product-detail-layout">
 
 
-  document.body.insertAdjacentHTML(
-    "beforeend",
-    `
-      <div
-        class="modal"
-        id="searchPanel"
-        style="align-items:flex-start;padding-top:80px"
-      >
+      <div class="product-gallery">
 
-        <div
-          class="modal-card"
-          style="max-width:800px"
-        >
 
-          <button
-            class="modal-close"
-            onclick="closeSearch()"
-          >
-            ×
-          </button>
+        <div class="main-product-image">
 
-          <p class="eyebrow">
-            SEARCH NEXROOR
-          </p>
+          <img
+            id="mainProductImage"
+            src="${product.images[0]}"
+            alt="${product.name}">
 
-          <h2>
-            Find a product
-          </h2>
+        </div>
 
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Search products, categories..."
-            autocomplete="off"
-            style="
-              width:100%;
-              padding:18px;
-              border:1px solid #ddd;
-              border-radius:14px;
-              margin:10px 0 20px;
-              font-size:18px;
-            "
-          >
 
-          <div
-            id="searchResults"
-            class="product-grid"
-            style="
-              grid-template-columns:repeat(2,1fr);
-            "
-          ></div>
+        <div class="thumbnail-list">
+
+          ${product.images.map((image, index) => `
+
+            <button
+              type="button"
+              class="product-thumbnail ${index === 0 ? "active" : ""}"
+              onclick="changeProductImage(
+                '${image}',
+                this
+              )">
+
+              <img
+                src="${image}"
+                alt="${product.name} image ${index + 1}">
+
+            </button>
+
+          `).join("")}
 
         </div>
 
       </div>
-    `
-  );
 
 
-  $("#searchInput").addEventListener(
-    "input",
-    runSearch
-  );
+      <div class="product-detail-info">
+
+        <p class="category">
+          ${product.cat}
+        </p>
 
 
-  $("#searchInput").addEventListener(
-    "keydown",
-    event => {
-
-      if (event.key === "Escape") {
-        closeSearch();
-      }
-
-    }
-  );
-}
+        <h2>
+          ${product.name}
+        </h2>
 
 
-function openSearch() {
+        <div class="detail-price">
 
-  createSearchUI();
+          <strong>
+            ${money(product.price)}
+          </strong>
 
-  $("#searchPanel").classList.add("open");
+          <del>
+            ${money(product.old)}
+          </del>
 
-  setTimeout(() => {
-    $("#searchInput").focus();
-  }, 100);
-}
-
-
-function closeSearch() {
-
-  const panel = $("#searchPanel");
-
-  if (panel) {
-    panel.classList.remove("open");
-  }
-}
-
-
-function runSearch() {
-
-  const query =
-    $("#searchInput")
-      .value
-      .trim()
-      .toLowerCase();
-
-
-  let result = products;
-
-
-  if (query) {
-
-    result = products.filter(product => {
-
-      const searchableText = [
-        product.name,
-        product.cat,
-        product.description,
-        ...(product.features || [])
-      ]
-        .join(" ")
-        .toLowerCase();
-
-      return searchableText.includes(query);
-    });
-  }
-
-
-  $("#searchResults").innerHTML =
-    result.length
-      ? result.map(productCard).join("")
-      : `
-        <div class="empty">
-          No products found for
-          "${query}".
         </div>
-      `;
+
+
+        <p class="product-description">
+          ${product.description}
+        </p>
+
+
+        <h3>
+          Product information
+        </h3>
+
+
+        <ul class="feature-list">
+
+          ${product.features.map(feature => `
+
+            <li>
+              ${feature}
+            </li>
+
+          `).join("")}
+
+        </ul>
+
+
+        <div class="detail-actions">
+
+          <button
+            class="secondary"
+            type="button"
+            onclick="addToCart(${product.id})">
+
+            Add to cart
+
+          </button>
+
+
+          <button
+            class="primary"
+            type="button"
+            onclick="buyNow(${product.id})">
+
+            Buy now
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  $("#productModal")
+    .classList
+    .add("open");
+
 }
 
 
-/* =========================================================
-   CART
-   ========================================================= */
+/* ---------------------------------------------------------
+   CHANGE PRODUCT IMAGE
+   --------------------------------------------------------- */
+
+function changeProductImage(image, button) {
+
+  const main =
+    $("#mainProductImage");
+
+
+  if (main) {
+
+    main.src = image;
+
+  }
+
+
+  document
+    .querySelectorAll(".product-thumbnail")
+    .forEach(item => {
+
+      item.classList.remove("active");
+
+    });
+
+
+  button.classList.add("active");
+
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE PRODUCT
+   --------------------------------------------------------- */
+
+function closeProduct() {
+
+  $("#productModal")
+    .classList
+    .remove("open");
+
+}
+
+
+/* ---------------------------------------------------------
+   ADD TO CART
+   --------------------------------------------------------- */
 
 function addToCart(id) {
 
+  id = Number(id);
+
+
   const existing =
-    cart.find(item => item.id === id);
+    cart.find(
+      item => item.id === id
+    );
 
 
   if (existing) {
@@ -885,9 +749,12 @@ function addToCart(id) {
   } else {
 
     cart.push({
+
       id: id,
       qty: 1
+
     });
+
   }
 
 
@@ -896,25 +763,41 @@ function addToCart(id) {
   renderCart();
 
   toast("Added to cart");
+
 }
 
 
+/* ---------------------------------------------------------
+   BUY NOW
+   --------------------------------------------------------- */
+
 function buyNow(id) {
 
-  cart = [
-    {
-      id: id,
-      qty: 1
-    }
-  ];
+  id = Number(id);
+
+
+  cart = [{
+
+    id: id,
+    qty: 1
+
+  }];
+
 
   saveCart();
 
   renderCart();
 
+  closeProduct();
+
   openCheckout();
+
 }
 
+
+/* ---------------------------------------------------------
+   RENDER CART
+   --------------------------------------------------------- */
 
 function renderCart() {
 
@@ -926,18 +809,18 @@ function renderCart() {
     );
 
 
-  if ($("#cartCount")) {
-    $("#cartCount").textContent =
-      count;
-  }
+  $("#cartCount").textContent =
+    count;
 
 
   if (!cart.length) {
 
     $("#cartItems").innerHTML = `
+
       <div class="empty">
         Your cart is empty.
       </div>
+
     `;
 
     $("#cartTotal").textContent =
@@ -947,6 +830,7 @@ function renderCart() {
       "₹0";
 
     return;
+
   }
 
 
@@ -958,15 +842,20 @@ function renderCart() {
           p => p.id === item.id
         );
 
+
+      if (!product) return "";
+
+
       return `
+
         <div class="cart-item">
 
           <img
-            src="${product.image}"
-            alt="${product.name}"
-          >
+            src="${product.images[0]}"
+            alt="${product.name}">
 
-          <div>
+
+          <div class="cart-item-info">
 
             <b>
               ${product.name}
@@ -976,11 +865,12 @@ function renderCart() {
               ${money(product.price)}
             </p>
 
+
             <div class="quantity">
 
               <button
-                onclick="changeQty(${product.id},-1)"
-              >
+                type="button"
+                onclick="changeQty(${product.id}, -1)">
                 −
               </button>
 
@@ -989,23 +879,27 @@ function renderCart() {
               </span>
 
               <button
-                onclick="changeQty(${product.id},1)"
-              >
+                type="button"
+                onclick="changeQty(${product.id}, 1)">
                 +
               </button>
 
             </div>
 
+
             <button
               class="remove"
-              onclick="removeItem(${product.id})"
-            >
+              type="button"
+              onclick="removeItem(${product.id})">
+
               Remove
+
             </button>
 
           </div>
 
         </div>
+
       `;
 
     }).join("");
@@ -1020,9 +914,12 @@ function renderCart() {
             p => p.id === item.id
           );
 
-        return sum +
-          product.price *
-          item.qty;
+
+        return product
+          ? sum +
+            product.price *
+            item.qty
+          : sum;
 
       },
       0
@@ -1034,15 +931,21 @@ function renderCart() {
 
   $("#checkoutTotal").textContent =
     money(total);
+
 }
 
+
+/* ---------------------------------------------------------
+   CHANGE QUANTITY
+   --------------------------------------------------------- */
 
 function changeQty(id, amount) {
 
   const item =
     cart.find(
-      item => item.id === id
+      item => item.id === Number(id)
     );
+
 
   if (!item) return;
 
@@ -1054,35 +957,45 @@ function changeQty(id, amount) {
 
     cart =
       cart.filter(
-        item => item.id !== id
+        item =>
+          item.id !== Number(id)
       );
+
   }
 
 
   saveCart();
 
   renderCart();
+
 }
 
+
+/* ---------------------------------------------------------
+   REMOVE ITEM
+   --------------------------------------------------------- */
 
 function removeItem(id) {
 
   cart =
     cart.filter(
-      item => item.id !== id
+      item =>
+        item.id !== Number(id)
     );
+
 
   saveCart();
 
   renderCart();
 
   toast("Item removed");
+
 }
 
 
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
+/* ---------------------------------------------------------
+   OPEN CHECKOUT
+   --------------------------------------------------------- */
 
 function openCheckout() {
 
@@ -1091,6 +1004,7 @@ function openCheckout() {
     toast("Your cart is empty");
 
     return;
+
   }
 
 
@@ -1099,20 +1013,26 @@ function openCheckout() {
   $("#checkoutModal")
     .classList
     .add("open");
+
 }
 
+
+/* ---------------------------------------------------------
+   CLOSE CHECKOUT
+   --------------------------------------------------------- */
 
 function closeCheckout() {
 
   $("#checkoutModal")
     .classList
     .remove("open");
+
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    ORDERS
-   ========================================================= */
+   --------------------------------------------------------- */
 
 function renderOrders() {
 
@@ -1127,18 +1047,24 @@ function renderOrders() {
   if (!orders.length) {
 
     $("#ordersList").innerHTML = `
+
       <div class="empty">
+
         No orders yet.
         Your orders will appear here.
+
       </div>
+
     `;
 
     return;
+
   }
 
 
   $("#ordersList").innerHTML =
     orders.map(order => `
+
       <div class="order-card">
 
         <div>
@@ -1148,8 +1074,9 @@ function renderOrders() {
           </b>
 
           <p>
-            ${order.items} item(s)
-            · ${money(order.total)}
+            ${order.items}
+            item(s) ·
+            ${money(order.total)}
           </p>
 
           <p>
@@ -1159,299 +1086,353 @@ function renderOrders() {
 
         </div>
 
+
         <span>
           Order received
         </span>
 
       </div>
+
     `).join("");
+
 }
 
 
-/* =========================================================
-   EVENT LISTENERS
-   ========================================================= */
+/* ---------------------------------------------------------
+   SEARCH
+   --------------------------------------------------------- */
 
-function setupEvents() {
+function performSearch() {
 
-  const cartBtn =
-    $("#cartBtn");
+  const search =
+    prompt(
+      "Search products by name or category:"
+    );
 
-  if (cartBtn) {
 
-    cartBtn.onclick = () => {
+  if (search === null) return;
 
-      $("#cartDrawer")
-        .classList
-        .add("open");
 
-    };
+  const query =
+    search.trim().toLowerCase();
+
+
+  if (!query) {
+
+    $("#searchStatus").textContent = "";
+
+    renderProducts();
+
+    return;
+
   }
 
 
-  const closeCart =
-    $("#closeCart");
+  const result =
+    products.filter(product =>
 
-  if (closeCart) {
+      product.name
+        .toLowerCase()
+        .includes(query)
 
-    closeCart.onclick = () => {
+      ||
 
-      $("#cartDrawer")
-        .classList
-        .remove("open");
+      product.cat
+        .toLowerCase()
+        .includes(query)
 
-    };
-  }
+      ||
 
+      product.description
+        .toLowerCase()
+        .includes(query)
 
-  const checkoutBtn =
-    $("#checkoutBtn");
+    );
 
-  if (checkoutBtn) {
-    checkoutBtn.onclick =
-      openCheckout;
-  }
 
+  $("#categoryFilter").value =
+    "all";
 
-  const closeCheckoutBtn =
-    $("#closeCheckout");
 
-  if (closeCheckoutBtn) {
-    closeCheckoutBtn.onclick =
-      closeCheckout;
-  }
+  $("#sortFilter").value =
+    "featured";
 
 
-  const searchBtn =
-    $("#searchBtn");
+  $("#searchStatus").textContent =
+    `Search results for "${search}"`;
 
-  if (searchBtn) {
-    searchBtn.onclick =
-      openSearch;
-  }
 
+  renderProducts(result);
 
-  const categoryFilter =
-    $("#categoryFilter");
 
-  if (categoryFilter) {
-    categoryFilter.onchange =
-      renderProducts;
-  }
+  document
+    .querySelector("#shop")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
-
-  const sortFilter =
-    $("#sortFilter");
-
-  if (sortFilter) {
-    sortFilter.onchange =
-      renderProducts;
-  }
-
-
-  const checkoutForm =
-    $("#checkoutForm");
-
-
-  if (checkoutForm) {
-
-    checkoutForm.onsubmit =
-      function(event) {
-
-        event.preventDefault();
-
-
-        if (!cart.length) {
-
-          toast(
-            "Your cart is empty"
-          );
-
-          return;
-        }
-
-
-        const form =
-          new FormData(
-            event.target
-          );
-
-
-        const total =
-          cart.reduce(
-            (sum, item) => {
-
-              const product =
-                products.find(
-                  p => p.id === item.id
-                );
-
-              return sum +
-                product.price *
-                item.qty;
-
-            },
-            0
-          );
-
-
-        const orders =
-          JSON.parse(
-            localStorage.getItem(
-              "nexroor_orders"
-            ) || "[]"
-          );
-
-
-        const orderId =
-          "NX" +
-          Date.now()
-            .toString()
-            .slice(-8);
-
-
-        const itemCount =
-          cart.reduce(
-            (sum, item) =>
-              sum + item.qty,
-            0
-          );
-
-
-        orders.unshift({
-
-          id: orderId,
-
-          name:
-            form.get("name"),
-
-          phone:
-            form.get("phone"),
-
-          address:
-            form.get("address"),
-
-          city:
-            form.get("city"),
-
-          pin:
-            form.get("pin"),
-
-          payment:
-            form.get("payment"),
-
-          total: total,
-
-          items: itemCount,
-
-          date:
-            new Date()
-              .toISOString()
-
-        });
-
-
-        localStorage.setItem(
-          "nexroor_orders",
-          JSON.stringify(orders)
-        );
-
-
-        cart = [];
-
-        saveCart();
-
-        renderCart();
-
-        renderOrders();
-
-        event.target.reset();
-
-        closeCheckout();
-
-
-        $("#cartDrawer")
-          .classList
-          .remove("open");
-
-
-        const ordersSection =
-          $("#orders");
-
-        if (ordersSection) {
-
-          ordersSection.scrollIntoView({
-            behavior: "smooth"
-          });
-        }
-
-
-        toast(
-          "Order placed successfully"
-        );
-      };
-  }
 }
 
 
-/* =========================================================
-   CLOSE MODALS WHEN CLICKING BACKGROUND
-   ========================================================= */
+/* ---------------------------------------------------------
+   EVENTS
+   --------------------------------------------------------- */
 
-document.addEventListener(
+$("#cartBtn").onclick = () => {
+
+  $("#cartDrawer")
+    .classList
+    .add("open");
+
+};
+
+
+$("#closeCart").onclick = () => {
+
+  $("#cartDrawer")
+    .classList
+    .remove("open");
+
+};
+
+
+$("#checkoutBtn").onclick =
+  openCheckout;
+
+
+$("#closeCheckout").onclick =
+  closeCheckout;
+
+
+$("#closeProduct").onclick =
+  closeProduct;
+
+
+$("#categoryFilter").onchange =
+  () => {
+
+    $("#searchStatus").textContent = "";
+
+    renderProducts();
+
+  };
+
+
+$("#sortFilter").onchange =
+  () => {
+
+    renderProducts();
+
+  };
+
+
+$("#searchBtn").onclick =
+  performSearch;
+
+
+/* ---------------------------------------------------------
+   CLOSE MODALS WHEN CLICKING OUTSIDE
+   --------------------------------------------------------- */
+
+$("#productModal").addEventListener(
   "click",
   event => {
 
     if (
-      event.target.id ===
-      "productModal"
+      event.target ===
+      $("#productModal")
     ) {
+
       closeProduct();
-    }
 
-
-    if (
-      event.target.id ===
-      "searchPanel"
-    ) {
-      closeSearch();
-    }
-
-
-    if (
-      event.target.id ===
-      "checkoutModal"
-    ) {
-      closeCheckout();
     }
 
   }
 );
 
 
-/* =========================================================
+$("#checkoutModal").addEventListener(
+  "click",
+  event => {
+
+    if (
+      event.target ===
+      $("#checkoutModal")
+    ) {
+
+      closeCheckout();
+
+    }
+
+  }
+);
+
+
+/* ---------------------------------------------------------
+   CHECKOUT
+   --------------------------------------------------------- */
+
+$("#checkoutForm").onsubmit =
+  function(event) {
+
+    event.preventDefault();
+
+
+    if (!cart.length) {
+
+      toast("Your cart is empty");
+
+      return;
+
+    }
+
+
+    const form =
+      new FormData(event.target);
+
+
+    const total =
+      cart.reduce(
+        (sum, item) => {
+
+          const product =
+            products.find(
+              p => p.id === item.id
+            );
+
+
+          return product
+            ? sum +
+              product.price *
+              item.qty
+            : sum;
+
+        },
+        0
+      );
+
+
+    const orders =
+      JSON.parse(
+        localStorage.getItem(
+          "nexroor_orders"
+        ) || "[]"
+      );
+
+
+    const orderId =
+      "NX" +
+      Date.now()
+        .toString()
+        .slice(-8);
+
+
+    const itemCount =
+      cart.reduce(
+        (sum, item) =>
+          sum + item.qty,
+        0
+      );
+
+
+    orders.unshift({
+
+      id: orderId,
+
+      name:
+        form.get("name"),
+
+      phone:
+        form.get("phone"),
+
+      address:
+        form.get("address"),
+
+      city:
+        form.get("city"),
+
+      pin:
+        form.get("pin"),
+
+      payment:
+        form.get("payment"),
+
+      total: total,
+
+      items:
+        itemCount,
+
+      date:
+        new Date().toISOString()
+
+    });
+
+
+    localStorage.setItem(
+      "nexroor_orders",
+      JSON.stringify(orders)
+    );
+
+
+    cart = [];
+
+    saveCart();
+
+    renderCart();
+
+    renderOrders();
+
+
+    event.target.reset();
+
+    closeCheckout();
+
+    $("#cartDrawer")
+      .classList
+      .remove("open");
+
+
+    document
+      .querySelector("#orders")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+
+    toast(
+      "Order placed successfully"
+    );
+
+  };
+
+
+/* ---------------------------------------------------------
    ESC KEY
-   ========================================================= */
+   --------------------------------------------------------- */
 
 document.addEventListener(
   "keydown",
   event => {
 
-    if (event.key !== "Escape") {
+    if (event.key !== "Escape")
       return;
-    }
+
 
     closeProduct();
-    closeSearch();
+
     closeCheckout();
+
+    $("#cartDrawer")
+      .classList
+      .remove("open");
 
   }
 );
 
 
-/* =========================================================
-   START APP
-   ========================================================= */
+/* ---------------------------------------------------------
+   INITIALIZE
+   --------------------------------------------------------- */
 
 renderCategories();
 
@@ -1460,5 +1441,3 @@ renderProducts();
 renderCart();
 
 renderOrders();
-
-setupEvents();
