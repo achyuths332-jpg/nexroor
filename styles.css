@@ -1154,3 +1154,11 @@ footer small{
   }
 
 }
+
+
+/* SEARCH BOX FIX */
+.search-box{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:4px 4px 4px 16px;}
+.search-box input{width:210px;border:0;outline:0;background:transparent;padding:10px 0;font-size:14px;}
+.search-box .icon-btn{border:0;width:42px;height:42px;padding:0;}
+@media(max-width:850px){.search-box input{width:140px;}.search-box{padding-left:12px;}}
+@media(max-width:520px){.search-box input{display:none;}.search-box{border:0;padding:0;background:transparent;}.search-box .icon-btn{border:1px solid var(--line);width:46px;height:46px;}}
