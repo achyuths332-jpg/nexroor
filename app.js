@@ -1,25 +1,12 @@
-/* =========================================================
-   NEXROOR - APP.JS
-   Product details + search + categories + cart + checkout
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   PRODUCTS
-   --------------------------------------------------------- */
-
 const products = [
-
   {
     id: 1,
     name: "Wireless ANC Headphones",
     cat: "Electronics",
     price: 2499,
     old: 3499,
-
     description:
       "Enjoy immersive sound with wireless ANC headphones designed for music, calls and everyday use.",
-
     features: [
       "Active noise cancellation",
       "Wireless Bluetooth connection",
@@ -27,7 +14,6 @@ const products = [
       "Built for everyday listening",
       "Rechargeable battery"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=900&q=85",
@@ -35,17 +21,14 @@ const products = [
     ]
   },
 
-
   {
     id: 2,
     name: "Minimal Smart Watch",
     cat: "Electronics",
     price: 1999,
     old: 2999,
-
     description:
       "A modern smart watch with a clean design for everyday activity tracking and notifications.",
-
     features: [
       "Modern minimal design",
       "Activity tracking",
@@ -53,7 +36,6 @@ const products = [
       "Comfortable wrist fit",
       "Suitable for everyday use"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=900&q=85",
@@ -61,17 +43,14 @@ const products = [
     ]
   },
 
-
   {
     id: 3,
     name: "Everyday Backpack",
     cat: "Fashion",
     price: 1299,
     old: 1799,
-
     description:
       "A practical everyday backpack suitable for work, college, travel and daily carrying.",
-
     features: [
       "Spacious main compartment",
       "Everyday carry design",
@@ -79,7 +58,6 @@ const products = [
       "Suitable for work and travel",
       "Modern minimalist look"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1556306535-38febf6782e7?auto=format&fit=crop&w=900&q=85",
@@ -87,17 +65,14 @@ const products = [
     ]
   },
 
-
   {
     id: 4,
     name: "Portable Coffee Maker",
     cat: "Home & Kitchen",
     price: 1799,
     old: 2499,
-
     description:
       "A compact coffee-making solution designed for convenient use at home, work or while travelling.",
-
     features: [
       "Compact design",
       "Easy to carry",
@@ -105,7 +80,6 @@ const products = [
       "Simple operation",
       "Modern appearance"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85",
@@ -113,17 +87,14 @@ const products = [
     ]
   },
 
-
   {
     id: 5,
     name: "Sunglasses Classic",
     cat: "Fashion",
     price: 899,
     old: 1299,
-
     description:
       "Classic everyday sunglasses with a versatile style that works with different outfits.",
-
     features: [
       "Classic frame design",
       "Lightweight construction",
@@ -131,14 +102,12 @@ const products = [
       "Versatile styling",
       "Comfortable fit"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1511499767150-5b5e8f5c7d9b?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=85"
+      "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1511499767150-5b5e8f5c7d9b?auto=format&fit=crop&w=900&q=85"
     ]
   },
-
 
   {
     id: 6,
@@ -146,10 +115,8 @@ const products = [
     cat: "Home & Kitchen",
     price: 1099,
     old: 1599,
-
     description:
       "A modern desk lamp designed to add practical lighting to your workspace, study area or bedside table.",
-
     features: [
       "Modern minimalist design",
       "Suitable for desks and tables",
@@ -157,7 +124,6 @@ const products = [
       "Useful for study and work",
       "Contemporary appearance"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1534281308479-cf7a0c6f3a58?auto=format&fit=crop&w=900&q=85",
@@ -165,17 +131,14 @@ const products = [
     ]
   },
 
-
   {
     id: 7,
     name: "Skincare Essentials",
     cat: "Beauty",
     price: 799,
     old: 1199,
-
     description:
       "A convenient skincare essentials collection designed for simple everyday personal-care routines.",
-
     features: [
       "Everyday skincare collection",
       "Easy to use",
@@ -183,7 +146,6 @@ const products = [
       "Convenient packaging",
       "Ideal for everyday use"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=85",
@@ -191,17 +153,14 @@ const products = [
     ]
   },
 
-
   {
     id: 8,
     name: "Compact Bluetooth Speaker",
     cat: "Electronics",
     price: 1399,
     old: 1899,
-
     description:
       "A compact Bluetooth speaker made for convenient wireless listening at home, outdoors and while travelling.",
-
     features: [
       "Bluetooth wireless connection",
       "Compact portable design",
@@ -209,23 +168,15 @@ const products = [
       "Easy to carry",
       "Modern appearance"
     ],
-
     images: [
       "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=85"
     ]
   }
-
 ];
 
-
-/* ---------------------------------------------------------
-   CATEGORY IMAGES
-   --------------------------------------------------------- */
-
 const categoryImages = {
-
   "Electronics":
     "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=85",
 
@@ -237,168 +188,124 @@ const categoryImages = {
 
   "Beauty":
     "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
-
 };
-
-
-/* ---------------------------------------------------------
-   CART
-   --------------------------------------------------------- */
 
 let cart = JSON.parse(
   localStorage.getItem("nexroor_cart") || "[]"
 );
 
-
-/* ---------------------------------------------------------
-   HELPER
-   --------------------------------------------------------- */
-
-const $ = selector =>
-  document.querySelector(selector);
-
+const $ = selector => document.querySelector(selector);
 
 function money(value) {
-
-  return "₹" +
-    Number(value).toLocaleString("en-IN");
-
+  return "₹" + Number(value).toLocaleString("en-IN");
 }
 
-
-/* ---------------------------------------------------------
-   SAVE CART
-   --------------------------------------------------------- */
-
 function saveCart() {
-
   localStorage.setItem(
     "nexroor_cart",
     JSON.stringify(cart)
   );
-
 }
 
-
-/* ---------------------------------------------------------
-   TOAST
-   --------------------------------------------------------- */
-
 function toast(message) {
-
   const box = $("#toast");
 
   if (!box) return;
 
   box.textContent = message;
-
   box.classList.add("show");
 
-  setTimeout(() => {
+  clearTimeout(window.__toast);
 
+  window.__toast = setTimeout(() => {
     box.classList.remove("show");
-
   }, 2200);
-
 }
 
 
-/* ---------------------------------------------------------
-   RENDER CATEGORIES
-   --------------------------------------------------------- */
+/* =========================
+   CATEGORIES
+   ========================= */
 
 function renderCategories() {
-
   const categories = [
-    ...new Set(
-      products.map(product => product.cat)
-    )
+    ...new Set(products.map(product => product.cat))
   ];
 
-
-  $("#categoryGrid").innerHTML =
-    categories.map(category => `
-
+  $("#categoryGrid").innerHTML = categories
+    .map(category => `
       <button
         class="category-card"
         type="button"
-        onclick="selectCategory('${category}')">
-
+        data-category="${category}"
+      >
         <img
           src="${categoryImages[category]}"
           alt="${category}"
-          loading="lazy">
+          loading="lazy"
+        >
 
-        <span>
-          ${category}
-        </span>
-
+        <span>${category}</span>
       </button>
-
-    `).join("");
-
+    `)
+    .join("");
 
   $("#categoryFilter").innerHTML =
+    `<option value="all">All categories</option>` +
+    categories
+      .map(category =>
+        `<option value="${category}">${category}</option>`
+      )
+      .join("");
 
-    `<option value="all">
-      All categories
-    </option>` +
-
-    categories.map(category => `
-
-      <option value="${category}">
-        ${category}
-      </option>
-
-    `).join("");
-
+  document
+    .querySelectorAll(".category-card")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        selectCategory(button.dataset.category);
+      });
+    });
 }
 
-
-/* ---------------------------------------------------------
-   SELECT CATEGORY
-   --------------------------------------------------------- */
-
 function selectCategory(category) {
-
   $("#categoryFilter").value = category;
+
+  $("#searchInput").value = "";
+
+  $("#searchStatus").textContent = "";
 
   renderProducts();
 
-  document
-    .querySelector("#shop")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-
+  $("#shop").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 
-/* ---------------------------------------------------------
-   PRODUCT CARD
-   --------------------------------------------------------- */
+/* =========================
+   PRODUCT CARDS
+   ========================= */
 
 function productCard(product) {
-
   return `
-
     <article
       class="product-card"
-      onclick="openProduct(${product.id})">
+      data-id="${product.id}"
+    >
 
       <div class="product-image-wrap">
 
         <img
           src="${product.images[0]}"
           alt="${product.name}"
-          loading="lazy">
+          loading="lazy"
+        >
 
         <span class="view-product">
           View details
         </span>
 
       </div>
-
 
       <div class="product-info">
 
@@ -409,7 +316,6 @@ function productCard(product) {
         <h3>
           ${product.name}
         </h3>
-
 
         <div class="price">
 
@@ -423,28 +329,20 @@ function productCard(product) {
 
         </div>
 
-
-        <div
-          class="product-actions"
-          onclick="event.stopPropagation()">
+        <div class="product-actions">
 
           <button
-            class="secondary"
+            class="secondary add-btn"
             type="button"
-            onclick="addToCart(${product.id})">
-
+          >
             Add to cart
-
           </button>
 
-
           <button
-            class="primary"
+            class="primary buy-btn"
             type="button"
-            onclick="buyNow(${product.id})">
-
+          >
             Buy now
-
           </button>
 
         </div>
@@ -452,23 +350,19 @@ function productCard(product) {
       </div>
 
     </article>
-
   `;
-
 }
 
 
-/* ---------------------------------------------------------
+/* =========================
    RENDER PRODUCTS
-   --------------------------------------------------------- */
+   ========================= */
 
-function renderProducts(listOverride = null) {
+function renderProducts(list = null) {
 
-  let list =
-    listOverride
-      ? [...listOverride]
-      : [...products];
-
+  let items = list
+    ? [...list]
+    : [...products];
 
   const category =
     $("#categoryFilter").value;
@@ -476,63 +370,70 @@ function renderProducts(listOverride = null) {
   const sort =
     $("#sortFilter").value;
 
-
-  if (!listOverride && category !== "all") {
-
-    list = list.filter(
-      product =>
-        product.cat === category
+  if (!list && category !== "all") {
+    items = items.filter(
+      product => product.cat === category
     );
-
   }
-
 
   if (sort === "low") {
-
-    list.sort(
-      (a, b) =>
-        a.price - b.price
+    items.sort(
+      (a, b) => a.price - b.price
     );
-
   }
-
 
   if (sort === "high") {
-
-    list.sort(
-      (a, b) =>
-        b.price - a.price
+    items.sort(
+      (a, b) => b.price - a.price
     );
-
   }
-
-
-  if (!list.length) {
-
-    $("#productGrid").innerHTML = `
-
-      <div class="empty product-empty">
-
-        No products found.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
 
   $("#productGrid").innerHTML =
-    list.map(productCard).join("");
+    items.length
+      ? items.map(productCard).join("")
+      : `
+        <div class="empty product-empty">
+          No products found.
+        </div>
+      `;
 
+  document
+    .querySelectorAll(".product-card")
+    .forEach(card => {
+
+      const id =
+        Number(card.dataset.id);
+
+      card.addEventListener(
+        "click",
+        () => openProduct(id)
+      );
+
+      card
+        .querySelector(".add-btn")
+        .addEventListener("click", event => {
+
+          event.stopPropagation();
+
+          addToCart(id);
+        });
+
+      card
+        .querySelector(".buy-btn")
+        .addEventListener("click", event => {
+
+          event.stopPropagation();
+
+          buyNow(id);
+        });
+
+    });
 }
 
 
-/* ---------------------------------------------------------
-   OPEN PRODUCT DETAILS
-   --------------------------------------------------------- */
+/* =========================
+   PRODUCT DETAILS
+   ========================= */
 
 function openProduct(id) {
 
@@ -541,57 +442,53 @@ function openProduct(id) {
       item => item.id === Number(id)
     );
 
-
   if (!product) {
-
     toast("Product not found");
-
     return;
-
   }
 
-
-  const details =
-    $("#productDetails");
-
-
-  details.innerHTML = `
+  $("#productDetails").innerHTML = `
 
     <div class="product-detail-layout">
 
-
       <div class="product-gallery">
-
 
         <div class="main-product-image">
 
           <img
             id="mainProductImage"
             src="${product.images[0]}"
-            alt="${product.name}">
+            alt="${product.name}"
+          >
 
         </div>
 
-
         <div class="thumbnail-list">
 
-          ${product.images.map((image, index) => `
+          ${product.images
+            .map(
+              (image, index) => `
+                <button
+                  class="product-thumbnail ${
+                    index === 0
+                      ? "active"
+                      : ""
+                  }"
+                  type="button"
+                  data-image="${image}"
+                >
 
-            <button
-              type="button"
-              class="product-thumbnail ${index === 0 ? "active" : ""}"
-              onclick="changeProductImage(
-                '${image}',
-                this
-              )">
+                  <img
+                    src="${image}"
+                    alt="${product.name} image ${
+                      index + 1
+                    }"
+                  >
 
-              <img
-                src="${image}"
-                alt="${product.name} image ${index + 1}">
-
-            </button>
-
-          `).join("")}
+                </button>
+              `
+            )
+            .join("")}
 
         </div>
 
@@ -604,11 +501,9 @@ function openProduct(id) {
           ${product.cat}
         </p>
 
-
         <h2>
           ${product.name}
         </h2>
-
 
         <div class="detail-price">
 
@@ -622,49 +517,41 @@ function openProduct(id) {
 
         </div>
 
-
         <p class="product-description">
           ${product.description}
         </p>
-
 
         <h3>
           Product information
         </h3>
 
-
         <ul class="feature-list">
 
-          ${product.features.map(feature => `
-
-            <li>
-              ${feature}
-            </li>
-
-          `).join("")}
+          ${product.features
+            .map(
+              feature =>
+                `<li>${feature}</li>`
+            )
+            .join("")}
 
         </ul>
-
 
         <div class="detail-actions">
 
           <button
             class="secondary"
             type="button"
-            onclick="addToCart(${product.id})">
-
+            id="detailAdd"
+          >
             Add to cart
-
           </button>
-
 
           <button
             class="primary"
             type="button"
-            onclick="buyNow(${product.id})">
-
+            id="detailBuy"
+          >
             Buy now
-
           </button>
 
         </div>
@@ -672,75 +559,63 @@ function openProduct(id) {
       </div>
 
     </div>
-
   `;
 
-
   $("#productModal")
-    .classList
-    .add("open");
-
-}
+    .classList.add("open");
 
 
-/* ---------------------------------------------------------
-   CHANGE PRODUCT IMAGE
-   --------------------------------------------------------- */
-
-function changeProductImage(image, button) {
-
-  const main =
-    $("#mainProductImage");
-
-
-  if (main) {
-
-    main.src = image;
-
-  }
-
+  /* Product image thumbnails */
 
   document
     .querySelectorAll(".product-thumbnail")
-    .forEach(item => {
+    .forEach(button => {
 
-      item.classList.remove("active");
+      button.addEventListener(
+        "click",
+        () => {
+
+          $("#mainProductImage").src =
+            button.dataset.image;
+
+          document
+            .querySelectorAll(".product-thumbnail")
+            .forEach(item =>
+              item.classList.remove("active")
+            );
+
+          button.classList.add("active");
+        }
+      );
 
     });
 
 
-  button.classList.add("active");
+  /* Detail buttons */
 
+  $("#detailAdd").onclick =
+    () => addToCart(product.id);
+
+  $("#detailBuy").onclick =
+    () => buyNow(product.id);
 }
-
-
-/* ---------------------------------------------------------
-   CLOSE PRODUCT
-   --------------------------------------------------------- */
 
 function closeProduct() {
-
   $("#productModal")
-    .classList
-    .remove("open");
-
+    .classList.remove("open");
 }
 
 
-/* ---------------------------------------------------------
-   ADD TO CART
-   --------------------------------------------------------- */
+/* =========================
+   CART
+   ========================= */
 
 function addToCart(id) {
 
   id = Number(id);
 
-
   const existing =
-    cart.find(
-      item => item.id === id
-    );
-
+    cart.find(item => item.id === id);
 
   if (existing) {
 
@@ -749,40 +624,28 @@ function addToCart(id) {
   } else {
 
     cart.push({
-
       id: id,
       qty: 1
-
     });
 
   }
-
 
   saveCart();
 
   renderCart();
 
   toast("Added to cart");
-
 }
 
 
-/* ---------------------------------------------------------
-   BUY NOW
-   --------------------------------------------------------- */
-
 function buyNow(id) {
 
-  id = Number(id);
-
-
-  cart = [{
-
-    id: id,
-    qty: 1
-
-  }];
-
+  cart = [
+    {
+      id: Number(id),
+      qty: 1
+    }
+  ];
 
   saveCart();
 
@@ -791,13 +654,8 @@ function buyNow(id) {
   closeProduct();
 
   openCheckout();
-
 }
 
-
-/* ---------------------------------------------------------
-   RENDER CART
-   --------------------------------------------------------- */
 
 function renderCart() {
 
@@ -808,7 +666,6 @@ function renderCart() {
       0
     );
 
-
   $("#cartCount").textContent =
     count;
 
@@ -816,11 +673,9 @@ function renderCart() {
   if (!cart.length) {
 
     $("#cartItems").innerHTML = `
-
       <div class="empty">
         Your cart is empty.
       </div>
-
     `;
 
     $("#cartTotal").textContent =
@@ -830,79 +685,123 @@ function renderCart() {
       "₹0";
 
     return;
-
   }
 
 
   $("#cartItems").innerHTML =
-    cart.map(item => {
+    cart
+      .map(item => {
 
-      const product =
-        products.find(
-          p => p.id === item.id
-        );
+        const product =
+          products.find(
+            p => p.id === item.id
+          );
 
+        if (!product) {
+          return "";
+        }
 
-      if (!product) return "";
+        return `
+          <div class="cart-item">
 
+            <img
+              src="${product.images[0]}"
+              alt="${product.name}"
+            >
 
-      return `
+            <div class="cart-item-info">
 
-        <div class="cart-item">
+              <b>
+                ${product.name}
+              </b>
 
-          <img
-            src="${product.images[0]}"
-            alt="${product.name}">
+              <p>
+                ${money(product.price)}
+              </p>
 
+              <div class="quantity">
 
-          <div class="cart-item-info">
+                <button
+                  type="button"
+                  data-minus="${product.id}"
+                >
+                  −
+                </button>
 
-            <b>
-              ${product.name}
-            </b>
+                <span>
+                  ${item.qty}
+                </span>
 
-            <p>
-              ${money(product.price)}
-            </p>
+                <button
+                  type="button"
+                  data-plus="${product.id}"
+                >
+                  +
+                </button>
 
-
-            <div class="quantity">
+              </div>
 
               <button
+                class="remove"
                 type="button"
-                onclick="changeQty(${product.id}, -1)">
-                −
-              </button>
-
-              <span>
-                ${item.qty}
-              </span>
-
-              <button
-                type="button"
-                onclick="changeQty(${product.id}, 1)">
-                +
+                data-remove="${product.id}"
+              >
+                Remove
               </button>
 
             </div>
 
-
-            <button
-              class="remove"
-              type="button"
-              onclick="removeItem(${product.id})">
-
-              Remove
-
-            </button>
-
           </div>
+        `;
+      })
+      .join("");
 
-        </div>
 
-      `;
+  document
+    .querySelectorAll("[data-minus]")
+    .forEach(button => {
 
-    }).join("");
+      button.onclick = () => {
+
+        changeQty(
+          Number(button.dataset.minus),
+          -1
+        );
+
+      };
+
+    });
+
+
+  document
+    .querySelectorAll("[data-plus]")
+    .forEach(button => {
+
+      button.onclick = () => {
+
+        changeQty(
+          Number(button.dataset.plus),
+          1
+        );
+
+      };
+
+    });
+
+
+  document
+    .querySelectorAll("[data-remove]")
+    .forEach(button => {
+
+      button.onclick = () => {
+
+        removeItem(
+          Number(button.dataset.remove)
+        );
+
+      };
+
+    });
 
 
   const total =
@@ -914,12 +813,14 @@ function renderCart() {
             p => p.id === item.id
           );
 
-
-        return product
-          ? sum +
-            product.price *
-            item.qty
-          : sum;
+        return (
+          sum +
+          (
+            product
+              ? product.price * item.qty
+              : 0
+          )
+        );
 
       },
       0
@@ -931,71 +832,53 @@ function renderCart() {
 
   $("#checkoutTotal").textContent =
     money(total);
-
 }
 
-
-/* ---------------------------------------------------------
-   CHANGE QUANTITY
-   --------------------------------------------------------- */
 
 function changeQty(id, amount) {
 
   const item =
     cart.find(
-      item => item.id === Number(id)
+      product => product.id === id
     );
-
 
   if (!item) return;
 
-
   item.qty += amount;
-
 
   if (item.qty <= 0) {
 
     cart =
       cart.filter(
-        item =>
-          item.id !== Number(id)
+        product => product.id !== id
       );
 
   }
 
-
   saveCart();
 
   renderCart();
-
 }
 
-
-/* ---------------------------------------------------------
-   REMOVE ITEM
-   --------------------------------------------------------- */
 
 function removeItem(id) {
 
   cart =
     cart.filter(
-      item =>
-        item.id !== Number(id)
+      item => item.id !== Number(id)
     );
-
 
   saveCart();
 
   renderCart();
 
   toast("Item removed");
-
 }
 
 
-/* ---------------------------------------------------------
-   OPEN CHECKOUT
-   --------------------------------------------------------- */
+/* =========================
+   CHECKOUT
+   ========================= */
 
 function openCheckout() {
 
@@ -1004,35 +887,25 @@ function openCheckout() {
     toast("Your cart is empty");
 
     return;
-
   }
-
 
   renderCart();
 
   $("#checkoutModal")
-    .classList
-    .add("open");
-
+    .classList.add("open");
 }
 
-
-/* ---------------------------------------------------------
-   CLOSE CHECKOUT
-   --------------------------------------------------------- */
 
 function closeCheckout() {
 
   $("#checkoutModal")
-    .classList
-    .remove("open");
-
+    .classList.remove("open");
 }
 
 
-/* ---------------------------------------------------------
+/* =========================
    ORDERS
-   --------------------------------------------------------- */
+   ========================= */
 
 function renderOrders() {
 
@@ -1047,142 +920,136 @@ function renderOrders() {
   if (!orders.length) {
 
     $("#ordersList").innerHTML = `
-
       <div class="empty">
-
         No orders yet.
         Your orders will appear here.
-
       </div>
-
     `;
 
     return;
-
   }
 
 
   $("#ordersList").innerHTML =
-    orders.map(order => `
+    orders
+      .map(
+        order => `
+          <div class="order-card">
 
-      <div class="order-card">
+            <div>
 
-        <div>
+              <b>
+                ${order.id}
+              </b>
 
-          <b>
-            ${order.id}
-          </b>
+              <p>
+                ${order.items} item(s)
+                ·
+                ${money(order.total)}
+              </p>
 
-          <p>
-            ${order.items}
-            item(s) ·
-            ${money(order.total)}
-          </p>
+              <p>
+                ${order.name},
+                ${order.city}
+              </p>
 
-          <p>
-            ${order.name},
-            ${order.city}
-          </p>
+            </div>
 
-        </div>
+            <span>
+              Order received
+            </span>
 
-
-        <span>
-          Order received
-        </span>
-
-      </div>
-
-    `).join("");
-
+          </div>
+        `
+      )
+      .join("");
 }
 
 
-/* ---------------------------------------------------------
+/* =========================
    SEARCH
-   --------------------------------------------------------- */
+   ========================= */
 
 function performSearch() {
 
   const search =
-    prompt(
-      "Search products by name or category:"
-    );
+    $("#searchInput")
+      .value
+      .trim()
+      .toLowerCase();
 
 
-  if (search === null) return;
+  if (!search) {
 
-
-  const query =
-    search.trim().toLowerCase();
-
-
-  if (!query) {
-
-    $("#searchStatus").textContent = "";
+    $("#searchStatus")
+      .textContent = "";
 
     renderProducts();
 
     return;
+  }
+
+
+  $("#categoryFilter")
+    .value = "all";
+
+
+  const results =
+    products.filter(product => {
+
+      const searchableText = [
+        product.name,
+        product.cat,
+        product.description,
+        ...product.features
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return searchableText.includes(search);
+
+    });
+
+
+  if (results.length) {
+
+    $("#searchStatus")
+      .textContent =
+        `Showing ${results.length} result${
+          results.length === 1
+            ? ""
+            : "s"
+        } for "${
+          $("#searchInput").value.trim()
+        }"`;
+
+  } else {
+
+    $("#searchStatus")
+      .textContent =
+        `No products found for "${
+          $("#searchInput").value.trim()
+        }"`;
 
   }
 
 
-  const result =
-    products.filter(product =>
+  renderProducts(results);
 
-      product.name
-        .toLowerCase()
-        .includes(query)
-
-      ||
-
-      product.cat
-        .toLowerCase()
-        .includes(query)
-
-      ||
-
-      product.description
-        .toLowerCase()
-        .includes(query)
-
-    );
-
-
-  $("#categoryFilter").value =
-    "all";
-
-
-  $("#sortFilter").value =
-    "featured";
-
-
-  $("#searchStatus").textContent =
-    `Search results for "${search}"`;
-
-
-  renderProducts(result);
-
-
-  document
-    .querySelector("#shop")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-
+  $("#shop").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 
-/* ---------------------------------------------------------
-   EVENTS
-   --------------------------------------------------------- */
+/* =========================
+   BUTTON EVENTS
+   ========================= */
 
 $("#cartBtn").onclick = () => {
 
   $("#cartDrawer")
-    .classList
-    .add("open");
+    .classList.add("open");
 
 };
 
@@ -1190,8 +1057,7 @@ $("#cartBtn").onclick = () => {
 $("#closeCart").onclick = () => {
 
   $("#cartDrawer")
-    .classList
-    .remove("open");
+    .classList.remove("open");
 
 };
 
@@ -1211,7 +1077,10 @@ $("#closeProduct").onclick =
 $("#categoryFilter").onchange =
   () => {
 
-    $("#searchStatus").textContent = "";
+    $("#searchInput").value = "";
+
+    $("#searchStatus")
+      .textContent = "";
 
     renderProducts();
 
@@ -1230,50 +1099,95 @@ $("#searchBtn").onclick =
   performSearch;
 
 
-/* ---------------------------------------------------------
-   CLOSE MODALS WHEN CLICKING OUTSIDE
-   --------------------------------------------------------- */
+$("#searchInput").addEventListener(
+  "input",
+  performSearch
+);
 
-$("#productModal").addEventListener(
-  "click",
+
+$("#searchInput").addEventListener(
+  "keydown",
   event => {
 
-    if (
-      event.target ===
-      $("#productModal")
-    ) {
+    if (event.key === "Enter") {
+
+      performSearch();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   MODAL CLICK OUTSIDE
+   ========================= */
+
+$("#productModal")
+  .addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target ===
+        $("#productModal")
+      ) {
+
+        closeProduct();
+
+      }
+
+    }
+  );
+
+
+$("#checkoutModal")
+  .addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target ===
+        $("#checkoutModal")
+      ) {
+
+        closeCheckout();
+
+      }
+
+    }
+  );
+
+
+/* =========================
+   ESCAPE KEY
+   ========================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key === "Escape") {
 
       closeProduct();
 
-    }
-
-  }
-);
-
-
-$("#checkoutModal").addEventListener(
-  "click",
-  event => {
-
-    if (
-      event.target ===
-      $("#checkoutModal")
-    ) {
-
       closeCheckout();
 
+      $("#cartDrawer")
+        .classList.remove("open");
+
     }
 
   }
 );
 
 
-/* ---------------------------------------------------------
-   CHECKOUT
-   --------------------------------------------------------- */
+/* =========================
+   CHECKOUT FORM
+   ========================= */
 
 $("#checkoutForm").onsubmit =
-  function(event) {
+  event => {
 
     event.preventDefault();
 
@@ -1283,7 +1197,6 @@ $("#checkoutForm").onsubmit =
       toast("Your cart is empty");
 
       return;
-
     }
 
 
@@ -1300,12 +1213,15 @@ $("#checkoutForm").onsubmit =
               p => p.id === item.id
             );
 
-
-          return product
-            ? sum +
-              product.price *
-              item.qty
-            : sum;
+          return (
+            sum +
+            (
+              product
+                ? product.price *
+                  item.qty
+                : 0
+            )
+          );
 
         },
         0
@@ -1382,21 +1298,17 @@ $("#checkoutForm").onsubmit =
 
     renderOrders();
 
-
     event.target.reset();
 
     closeCheckout();
 
     $("#cartDrawer")
-      .classList
-      .remove("open");
+      .classList.remove("open");
 
 
-    document
-      .querySelector("#orders")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
+    $("#orders").scrollIntoView({
+      behavior: "smooth"
+    });
 
 
     toast(
@@ -1406,33 +1318,9 @@ $("#checkoutForm").onsubmit =
   };
 
 
-/* ---------------------------------------------------------
-   ESC KEY
-   --------------------------------------------------------- */
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key !== "Escape")
-      return;
-
-
-    closeProduct();
-
-    closeCheckout();
-
-    $("#cartDrawer")
-      .classList
-      .remove("open");
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   INITIALIZE
-   --------------------------------------------------------- */
+/* =========================
+   INITIALIZE WEBSITE
+   ========================= */
 
 renderCategories();
 
