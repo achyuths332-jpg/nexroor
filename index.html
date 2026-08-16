@@ -98,6 +98,107 @@
   </footer>
 
   <div class="drawer" id="cartDrawer">
+    
+
+<div class="modal product-modal" id="productModal">
+
+  <div class="product-detail-card">
+
+    <button
+      class="modal-close"
+      id="closeProduct">
+      ×
+    </button>
+
+    <div class="product-detail-grid">
+
+      <!-- Images -->
+
+      <div class="product-gallery">
+
+        <div class="main-product-image">
+
+          <img
+            id="detailMainImage"
+            src=""
+            alt="Product">
+
+        </div>
+
+        <div
+          class="detail-thumbnails"
+          id="detailThumbnails">
+        </div>
+
+      </div>
+
+      <!-- Information -->
+
+      <div class="product-detail-info">
+
+        <p
+          class="eyebrow"
+          id="detailCategory">
+          CATEGORY
+        </p>
+
+        <h2 id="detailName">
+          Product name
+        </h2>
+
+        <div class="detail-price">
+
+          <strong id="detailPrice">
+            ₹0
+          </strong>
+
+          <del id="detailOldPrice">
+            ₹0
+          </del>
+
+        </div>
+
+        <p
+          class="detail-description"
+          id="detailDescription">
+        </p>
+
+        <h3>
+          Product features
+        </h3>
+
+        <ul
+          class="detail-features"
+          id="detailFeatures">
+        </ul>
+
+        <div class="detail-buttons">
+
+          <button
+            class="secondary"
+            id="detailAddCart">
+
+            Add to cart
+
+          </button>
+
+          <button
+            class="primary"
+            id="detailBuy">
+
+            Buy now
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
     <div class="drawer-panel">
       <div class="drawer-head"><h3>Your cart</h3><button id="closeCart">×</button></div>
       <div id="cartItems"></div>
