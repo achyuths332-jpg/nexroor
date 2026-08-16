@@ -1,978 +1,334 @@
-const products = [
-  {
-    id: 1,
-    name: "Wireless ANC Headphones",
-    cat: "Electronics",
-    price: 2499,
-    old: 3499,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "Premium wireless headphones with active noise cancellation, deep bass and comfortable ear cushions. Perfect for music, travel and everyday use.",
-    features: [
-      "Active Noise Cancellation",
-      "Wireless Bluetooth connectivity",
-      "Long battery life",
-      "Comfortable over-ear design",
-      "Built-in microphone"
-    ]
-  },
+/*
+  Everyday Cart — clean replacement storefront
+  Supplier/source metadata is intentionally kept out of the customer UI.
+  IMPORTANT: because this is a static client-side site, anything in app.js can
+  still be inspected by a technical visitor. True supplier-data secrecy needs
+  a server-side/admin API.
+*/
 
+const PRODUCTS = [
   {
-    id: 2,
-    name: "Minimal Smart Watch",
-    cat: "Electronics",
-    price: 1999,
-    old: 2999,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "A modern smart watch designed for everyday life. Track your activity, stay connected and keep your style simple.",
-    features: [
-      "Fitness tracking",
-      "Heart-rate monitoring",
-      "Activity tracking",
-      "Smart notifications",
-      "Modern lightweight design"
-    ]
+    id: 'waffle-maker-red',
+    name: 'Waffle Maker (Red)',
+    category: 'Kitchen',
+    supplierPrice: 364,
+    retailPrice: 1300,
+    sellingPrice: 799,
+    emoji: '🧇',
+    description: 'Compact waffle maker with non-stick heating plates for quick sweet or savory waffles.',
+    features: ['Non-stick heating plates', 'Quick heating', 'Easy single-action lid', 'Suitable for sweet and savory recipes'],
+    images: []
   },
-
   {
-    id: 3,
-    name: "Everyday Backpack",
-    cat: "Fashion",
-    price: 1299,
-    old: 1799,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "A stylish everyday backpack with enough space for work, college, travel and daily essentials.",
-    features: [
-      "Spacious main compartment",
-      "Laptop-friendly storage",
-      "Durable material",
-      "Comfortable shoulder straps",
-      "Modern minimalist design"
-    ]
+    id: 'usb-garlic-chopper-pink',
+    name: 'USB Garlic Chopper (Pink)',
+    category: 'Kitchen',
+    supplierPrice: 190,
+    retailPrice: 680,
+    sellingPrice: 399,
+    emoji: '🧄',
+    description: 'Compact rechargeable-style kitchen chopper for everyday ingredient preparation.',
+    features: ['Compact kitchen helper', 'Easy everyday prep', 'Lightweight design', 'Simple to clean'],
+    images: []
   },
-
   {
-    id: 4,
-    name: "Portable Coffee Maker",
-    cat: "Home & Kitchen",
-    price: 1799,
-    old: 2499,
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "Compact coffee equipment for making your favourite coffee at home, at work or while travelling.",
-    features: [
-      "Compact design",
-      "Easy to use",
-      "Travel friendly",
-      "Easy cleaning",
-      "Suitable for everyday coffee"
-    ]
+    id: 'silicone-sink-guard',
+    name: 'Silicone Sink Splash Guard (Multicolor)',
+    category: 'Home',
+    supplierPrice: 179,
+    retailPrice: 640,
+    sellingPrice: 349,
+    emoji: '🚿',
+    description: 'Flexible silicone splash guard designed to help keep the counter around the sink dry and tidy.',
+    features: ['Flexible silicone', 'Suction-cup mounting', 'No drilling required', 'Water-resistant and easy to clean'],
+    images: []
   },
-
   {
-    id: 5,
-    name: "Sunglasses Classic",
-    cat: "Fashion",
-    price: 899,
-    old: 1299,
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "Classic everyday sunglasses with a clean design that works with casual and modern outfits.",
-    features: [
-      "Classic frame",
-      "Lightweight design",
-      "Comfortable fit",
-      "Everyday styling",
-      "UV protection style"
-    ]
+    id: 'magic-cleaning-cloth-black',
+    name: 'Pack of 5 Magic Cleaning Cloth (Black)',
+    category: 'Cleaning',
+    supplierPrice: 196,
+    retailPrice: 700,
+    sellingPrice: 399,
+    emoji: '🧽',
+    description: 'Reusable microfiber cleaning cloths for glass, mirrors, stainless steel, kitchen surfaces and more.',
+    features: ['Pack of 5', 'Microfiber material', 'Fast water absorption', 'Reusable and washable'],
+    images: []
   },
-
   {
-    id: 6,
-    name: "Modern Desk Lamp",
-    cat: "Home & Kitchen",
-    price: 1099,
-    old: 1599,
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1534281307948-9c9c0c8b1f42?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "A modern desk lamp for study tables, workspaces and bedrooms. Simple design with a clean look.",
-    features: [
-      "Modern design",
-      "Desk-friendly size",
-      "Study and work lighting",
-      "Minimal appearance",
-      "Easy placement"
-    ]
-  },
-
-  {
-    id: 7,
-    name: "Skincare Essentials",
-    cat: "Beauty",
-    price: 799,
-    old: 1199,
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "A simple collection of everyday skincare essentials designed for a clean and easy routine.",
-    features: [
-      "Daily skincare essentials",
-      "Easy routine",
-      "Travel friendly",
-      "Simple packaging",
-      "Suitable for everyday use"
-    ]
-  },
-
-  {
-    id: 8,
-    name: "Compact Bluetooth Speaker",
-    cat: "Electronics",
-    price: 1399,
-    old: 1899,
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1000&q=85"
-    ],
-    description: "A compact Bluetooth speaker delivering portable sound for rooms, trips, parties and everyday listening.",
-    features: [
-      "Bluetooth connectivity",
-      "Portable design",
-      "Compact size",
-      "Wireless operation",
-      "Suitable for indoor and outdoor use"
-    ]
+    id: 'oil-sprayer-black',
+    name: 'Pack of 2 Oil Sprayer for Cooking (Black)',
+    category: 'Kitchen',
+    supplierPrice: 201,
+    retailPrice: 720,
+    sellingPrice: 449,
+    emoji: '🫗',
+    description: 'Two-piece oil sprayer set designed for controlled application while cooking, grilling or baking.',
+    features: ['Pack of 2', 'Transparent glass body', 'Controlled spray', 'Suitable for multiple oils and sauces'],
+    images: []
   }
 ];
 
-const categoryImages = {
-  "Electronics":
-    "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=85",
-
-  "Fashion":
-    "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=85",
-
-  "Home & Kitchen":
-    "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=700&q=85",
-
-  "Beauty":
-    "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
+// INTERNAL SOURCE AREA — not rendered in the customer-facing product cards.
+// Replace image URLs only with URLs you are permitted to use after reseller access.
+const SUPPLIER_SOURCE = {
+  'waffle-maker-red': {
+    sku: 'AL3551010XX',
+    productPage: 'https://www.baapstore.com/home-kitchen'
+  },
+  'usb-garlic-chopper-pink': {
+    sku: 'AL355101032',
+    productPage: 'https://shop.baapstore.com/products/usb-garlic-chopper-pink-pid66771'
+  },
+  'silicone-sink-guard': {
+    sku: 'AL355101029',
+    productPage: 'https://www.baapstore.com/Dropship-Silicone-Sink-Splash-Guard-for-Kitchen-Multicolor-PID66768'
+  },
+  'magic-cleaning-cloth-black': {
+    sku: 'AL355101148',
+    productPage: 'https://www.baapstore.com/Dropship-Pack-of-5-Magic-Cleaning-Cloth-Black-PID66915'
+  },
+  'oil-sprayer-black': {
+    sku: 'AL355101157',
+    productPage: 'https://shop.baapstore.com/products/pack-of-2-oil-sprayer-for-cooking-black-pid66924'
+  }
 };
 
-let cart = JSON.parse(
-  localStorage.getItem("nexroor_cart") || "[]"
-);
+const state = {
+  route: 'home',
+  selectedProduct: null,
+  category: 'All',
+  search: '',
+  sort: 'featured',
+  detailImage: 0,
+  detailQty: 1,
+  cart: loadJSON('ec_cart', []),
+  orders: loadJSON('ec_orders', [])
+};
 
-const $ = selector => document.querySelector(selector);
+const app = document.querySelector('#app');
+const toast = document.querySelector('#toast');
 
-function money(value) {
-  return "₹" + Number(value).toLocaleString("en-IN");
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+function loadJSON(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
+}
+function saveJSON(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+function money(value) { return `₹${Number(value).toLocaleString('en-IN')}`; }
+function escapeHTML(value) { return String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+function getProduct(id) { return PRODUCTS.find(p => p.id === id); }
+function cartCount() { return state.cart.reduce((n, i) => n + i.qty, 0); }
+function cartSubtotal() { return state.cart.reduce((sum, i) => sum + getProduct(i.id).sellingPrice * i.qty, 0); }
+function shipping() { return state.cart.length ? 0 : 0; }
+function updateCartBadge() { document.querySelector('#cart-count').textContent = cartCount(); }
+function notify(message) {
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(notify.timer);
+  notify.timer = setTimeout(() => toast.classList.remove('show'), 1800);
 }
 
-function saveCart() {
-  localStorage.setItem(
-    "nexroor_cart",
-    JSON.stringify(cart)
-  );
+function placeholder(product, large = false) {
+  return `<div class="placeholder-art" aria-label="Product image pending approved supplier image URL"><div><div class="emoji">${product.emoji}</div><span>Product image</span></div></div>`;
 }
-
-function toast(message) {
-  const box = $("#toast");
-
-  if (!box) return;
-
-  box.textContent = message;
-  box.classList.add("show");
-
-  setTimeout(() => {
-    box.classList.remove("show");
-  }, 2200);
+function imageMarkup(product, index = 0, cls = '') {
+  const url = product.images?.[index];
+  return url ? `<img class="${cls}" src="${escapeHTML(url)}" alt="${escapeHTML(product.name)}" loading="lazy">` : placeholder(product);
 }
-
-/* =========================
-   CATEGORIES
-========================= */
-
-function renderCategories() {
-
-  const categories = [
-    ...new Set(products.map(product => product.cat))
-  ];
-
-  $("#categoryGrid").innerHTML = categories.map(category => `
-    <button
-      class="category-card"
-      onclick="selectCategory('${category}')">
-
-      <img
-        src="${categoryImages[category]}"
-        alt="${category}">
-
-      <span>${category}</span>
-
-    </button>
-  `).join("");
-
-  $("#categoryFilter").innerHTML =
-    `<option value="all">All categories</option>` +
-    categories.map(category =>
-      `<option value="${category}">
-        ${category}
-      </option>`
-    ).join("");
-}
-
-function selectCategory(category) {
-
-  $("#categoryFilter").value = category;
-
-  renderProducts();
-
-  document.querySelector("#shop").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-/* =========================
-   PRODUCT CARDS
-========================= */
-
-function renderProducts(list = null) {
-
-  let productList = list
-    ? [...list]
-    : [...products];
-
-  const category = $("#categoryFilter").value;
-  const sort = $("#sortFilter").value;
-
-  if (category !== "all") {
-    productList = productList.filter(
-      product => product.cat === category
-    );
-  }
-
-  if (sort === "low") {
-    productList.sort(
-      (a, b) => a.price - b.price
-    );
-  }
-
-  if (sort === "high") {
-    productList.sort(
-      (a, b) => b.price - a.price
-    );
-  }
-
-  if (!productList.length) {
-
-    $("#productGrid").innerHTML = `
-      <div class="empty search-empty">
-        <h3>No products found</h3>
-        <p>Try another product name or category.</p>
+function productCard(product) {
+  const saving = Math.max(0, product.retailPrice - product.sellingPrice);
+  return `<article class="product-card">
+    <button class="product-media" data-product="${product.id}" aria-label="View ${escapeHTML(product.name)}">${imageMarkup(product)}</button>
+    <div class="product-body">
+      <div class="product-meta">${escapeHTML(product.category)}</div>
+      <h3 class="product-name">${escapeHTML(product.name)}</h3>
+      <div class="price-row"><span class="price">${money(product.sellingPrice)}</span><span class="old-price">${money(product.retailPrice)}</span></div>
+      <div class="save">Save ${money(saving)}</div>
+      <div class="card-actions">
+        <button class="ghost-btn" data-product="${product.id}">Details</button>
+        <button class="primary-btn" data-add="${product.id}">Add to cart</button>
       </div>
-    `;
+    </div>
+  </article>`;
+}
 
-    return;
-  }
+function renderHome() {
+  const categories = ['All', ...new Set(PRODUCTS.map(p => p.category))];
+  let list = PRODUCTS.filter(p => state.category === 'All' || p.category === state.category);
+  const q = state.search.trim().toLowerCase();
+  if (q) list = list.filter(p => `${p.name} ${p.category} ${p.description}`.toLowerCase().includes(q));
+  if (state.sort === 'price-low') list.sort((a,b) => a.sellingPrice - b.sellingPrice);
+  if (state.sort === 'price-high') list.sort((a,b) => b.sellingPrice - a.sellingPrice);
+  if (state.sort === 'name') list.sort((a,b) => a.name.localeCompare(b.name));
 
-  $("#productGrid").innerHTML =
-    productList.map(product => `
+  app.innerHTML = `<section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Simple products · India</div>
+      <h1>Useful things for your everyday home.</h1>
+      <p>Shop practical kitchen, home and cleaning products with clear pricing, quick browsing and a simple checkout.</p>
+    </div>
+    <div class="hero-card">
+      <div class="eyebrow">Why shop here</div>
+      <h2>Clean store. Clear prices.</h2>
+      <div class="mini-grid">
+        <div class="mini"><strong>₹ pricing</strong><span>Simple checkout</span></div>
+        <div class="mini"><strong>Easy browsing</strong><span>Search & filters</span></div>
+        <div class="mini"><strong>Mobile ready</strong><span>Built for phones</span></div>
+        <div class="mini"><strong>Useful picks</strong><span>Everyday essentials</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="toolbar">
+    <div class="toolbar-row">
+      <input id="search" class="search" type="search" placeholder="Search products…" value="${escapeHTML(state.search)}" aria-label="Search products">
+      <select id="sort" class="search" aria-label="Sort products">
+        <option value="featured" ${state.sort==='featured'?'selected':''}>Featured</option>
+        <option value="price-low" ${state.sort==='price-low'?'selected':''}>Price: low to high</option>
+        <option value="price-high" ${state.sort==='price-high'?'selected':''}>Price: high to low</option>
+        <option value="name" ${state.sort==='name'?'selected':''}>Name A–Z</option>
+      </select>
+    </div>
+    <div class="category-row">${categories.map(c => `<button class="category-btn ${state.category===c?'active':''}" data-category="${c}">${c}</button>`).join('')}</div>
+  </section>
+  <section>
+    <div class="section-head"><div><h2>Featured products</h2><p>${list.length} product${list.length===1?'':'s'}</p></div></div>
+    ${list.length ? `<div class="product-grid">${list.map(productCard).join('')}</div>` : `<div class="empty"><h3>No products found</h3><p>Try another search or category.</p></div>`}
+  </section>`;
 
-      <article
-        class="product-card"
-        onclick="openProduct(${product.id})">
+  document.querySelector('#search').addEventListener('input', e => { state.search = e.target.value; renderHome(); focusSearch(); });
+  document.querySelector('#sort').addEventListener('change', e => { state.sort = e.target.value; renderHome(); });
+}
+function focusSearch() { const el = document.querySelector('#search'); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } }
 
-        <div class="product-image-wrap">
-
-          <img
-            src="${product.image}"
-            alt="${product.name}"
-            loading="lazy">
-
-          <span class="view-product">
-            View details
-          </span>
-
+function renderDetail() {
+  const p = getProduct(state.selectedProduct);
+  if (!p) return navigate('home');
+  const imageCount = Math.max(1, p.images?.length || 1);
+  app.innerHTML = `<section class="detail">
+    <button class="ghost-btn back" data-route="home">← Back to products</button>
+    <div class="detail-grid">
+      <div>
+        <div class="gallery-main">${imageMarkup(p, state.detailImage)}</div>
+        <div class="gallery-thumbs">${Array.from({length:imageCount},(_,i)=>`<button class="thumb ${i===state.detailImage?'active':''}" data-gallery="${i}">${imageMarkup(p,i)}</button>`).join('')}</div>
+      </div>
+      <div>
+        <div class="eyebrow">${escapeHTML(p.category)}</div>
+        <h1>${escapeHTML(p.name)}</h1>
+        <div class="price-row"><span class="price">${money(p.sellingPrice)}</span><span class="old-price">${money(p.retailPrice)}</span></div>
+        <p class="detail-copy">${escapeHTML(p.description)}</p>
+        <h3>Features</h3>
+        <ul class="feature-list">${p.features.map(f=>`<li>${escapeHTML(f)}</li>`).join('')}</ul>
+        <div class="buy-box">
+          <div class="qty"><button data-qty="-1">−</button><strong>${state.detailQty}</strong><button data-qty="1">+</button></div>
+          <div class="buy-actions"><button class="ghost-btn" data-add="${p.id}" data-detail-qty="${state.detailQty}">Add to cart</button><button class="primary-btn" data-buy="${p.id}">Buy now</button></div>
         </div>
-
-        <div
-          class="product-info"
-          onclick="event.stopPropagation()">
-
-          <p class="category">
-            ${product.cat}
-          </p>
-
-          <h3>${product.name}</h3>
-
-          <div class="price">
-
-            <strong>
-              ${money(product.price)}
-            </strong>
-
-            <del>
-              ${money(product.old)}
-            </del>
-
-          </div>
-
-          <div class="product-actions">
-
-            <button
-              class="secondary"
-              onclick="addToCart(${product.id})">
-
-              Add to cart
-
-            </button>
-
-            <button
-              class="primary"
-              onclick="buyNow(${product.id})">
-
-              Buy now
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    `).join("");
-}
-
-/* =========================
-   PRODUCT DETAILS
-========================= */
-
-function openProduct(id) {
-
-  const product = products.find(
-    item => item.id === id
-  );
-
-  if (!product) return;
-
-  const detailModal = $("#productModal");
-
-  $("#detailCategory").textContent =
-    product.cat;
-
-  $("#detailName").textContent =
-    product.name;
-
-  $("#detailPrice").textContent =
-    money(product.price);
-
-  $("#detailOldPrice").textContent =
-    money(product.old);
-
-  $("#detailDescription").textContent =
-    product.description;
-
-  $("#detailMainImage").src =
-    product.images[0];
-
-  $("#detailMainImage").alt =
-    product.name;
-
-  $("#detailThumbnails").innerHTML =
-    product.images.map((image, index) => `
-
-      <button
-        class="thumbnail ${index === 0 ? "active" : ""}"
-        onclick="changeProductImage('${image}', this)">
-
-        <img
-          src="${image}"
-          alt="${product.name} view ${index + 1}">
-
-      </button>
-
-    `).join("");
-
-  $("#detailFeatures").innerHTML =
-    product.features.map(feature => `
-      <li>${feature}</li>
-    `).join("");
-
-  $("#detailAddCart").onclick = () => {
-    addToCart(product.id);
-  };
-
-  $("#detailBuy").onclick = () => {
-    buyNow(product.id);
-  };
-
-  detailModal.classList.add("open");
-
-  document.body.classList.add("modal-open");
-}
-
-function changeProductImage(image, button) {
-
-  $("#detailMainImage").src = image;
-
-  document
-    .querySelectorAll(".thumbnail")
-    .forEach(item =>
-      item.classList.remove("active")
-    );
-
-  button.classList.add("active");
-}
-
-function closeProduct() {
-
-  $("#productModal").classList.remove("open");
-
-  document.body.classList.remove("modal-open");
-}
-
-/* =========================
-   SEARCH
-========================= */
-
-function searchProducts() {
-
-  const input = $("#searchInput");
-
-  if (!input) return;
-
-  const search = input.value
-    .trim()
-    .toLowerCase();
-
-  if (!search) {
-
-    renderProducts();
-
-    $("#searchResultsText").textContent =
-      "";
-
-    return;
-  }
-
-  const result = products.filter(product => {
-
-    const searchableText = `
-      ${product.name}
-      ${product.cat}
-      ${product.description}
-      ${product.features.join(" ")}
-    `.toLowerCase();
-
-    return searchableText.includes(search);
-  });
-
-  $("#categoryFilter").value = "all";
-
-  renderProducts(result);
-
-  $("#searchResultsText").textContent =
-    result.length
-      ? `${result.length} product(s) found for "${input.value}"`
-      : `No products found for "${input.value}"`;
-
-  document.querySelector("#shop").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-/* =========================
-   CART
-========================= */
-
-function addToCart(id) {
-
-  const existing = cart.find(
-    item => item.id === id
-  );
-
-  if (existing) {
-
-    existing.qty++;
-
-  } else {
-
-    cart.push({
-      id: id,
-      qty: 1
-    });
-
-  }
-
-  saveCart();
-
-  renderCart();
-
-  toast("Added to cart");
-}
-
-function buyNow(id) {
-
-  cart = [
-    {
-      id: id,
-      qty: 1
-    }
-  ];
-
-  saveCart();
-
-  renderCart();
-
-  openCheckout();
+      </div>
+    </div>
+  </section>`;
 }
 
 function renderCart() {
+  if (!state.cart.length) {
+    app.innerHTML = `<section class="empty"><h2>Your cart is empty</h2><p>Add something useful and it will appear here.</p><button class="primary-btn" data-route="home">Continue shopping</button></section>`;
+    return;
+  }
+  const subtotal = cartSubtotal();
+  app.innerHTML = `<section class="cart-layout">
+    <div class="cart-list"><div class="section-head" style="padding-top:0"><div><h2>Your cart</h2><p>${cartCount()} item${cartCount()===1?'':'s'}</p></div></div>
+      ${state.cart.map(item => { const p=getProduct(item.id); return `<div class="cart-item">
+        <div class="cart-thumb">${imageMarkup(p)}</div>
+        <div><h3>${escapeHTML(p.name)}</h3><p>${money(p.sellingPrice)} each</p><div class="qty"><button data-cart-qty="-1" data-id="${p.id}">−</button><strong>${item.qty}</strong><button data-cart-qty="1" data-id="${p.id}">+</button></div></div>
+        <div class="cart-item-right"><div class="line-price">${money(p.sellingPrice*item.qty)}</div><button class="danger-btn" data-remove="${p.id}">Remove</button></div>
+      </div>`; }).join('')}
+    </div>
+    <aside class="summary"><h3>Order summary</h3><div class="summary-row"><span>Subtotal</span><strong>${money(subtotal)}</strong></div><div class="summary-row"><span>Shipping</span><strong>${shipping() ? money(shipping()) : 'Free'}</strong></div><div class="summary-row summary-total"><span>Total</span><strong>${money(subtotal+shipping())}</strong></div><button class="primary-btn" style="width:100%;margin-top:14px" data-route="checkout">Proceed to checkout</button></aside>
+  </section>`;
+}
 
-  const count = cart.reduce(
-    (sum, item) => sum + item.qty,
-    0
-  );
-
-  $("#cartCount").textContent = count;
-
-  if (!cart.length) {
-
-    $("#cartItems").innerHTML = `
-      <div class="empty">
-        Your cart is empty.
+function renderCheckout() {
+  if (!state.cart.length) return navigate('cart');
+  const subtotal = cartSubtotal();
+  app.innerHTML = `<section class="checkout"><button class="ghost-btn back" data-route="cart">← Back to cart</button><div class="checkout-card"><h2>Checkout</h2><p class="detail-copy">Enter your delivery details. This demo stores orders in your browser; connect a real payment/order API before going live.</p>
+    <form id="checkout-form">
+      <div class="form-grid">
+        <div class="field"><label for="name">Full name</label><input id="name" name="name" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" inputmode="tel" required></div>
+        <div class="field full"><label for="address">Address</label><textarea id="address" name="address" required></textarea></div>
+        <div class="field"><label for="city">City</label><input id="city" name="city" required></div>
+        <div class="field"><label for="pincode">PIN code</label><input id="pincode" name="pincode" inputmode="numeric" required></div>
+        <div class="field full"><label for="payment">Payment method</label><select id="payment" name="payment"><option>Cash on Delivery</option><option>Online Payment (connect gateway)</option></select></div>
       </div>
-    `;
-
-    $("#cartTotal").textContent = "₹0";
-    $("#checkoutTotal").textContent = "₹0";
-
-    return;
-  }
-
-  $("#cartItems").innerHTML =
-    cart.map(item => {
-
-      const product = products.find(
-        p => p.id === item.id
-      );
-
-      return `
-
-        <div class="cart-item">
-
-          <img
-            src="${product.image}"
-            alt="${product.name}">
-
-          <div>
-
-            <b>${product.name}</b>
-
-            <p>
-              ${money(product.price)}
-            </p>
-
-            <div class="quantity">
-
-              <button
-                onclick="changeQty(${product.id}, -1)">
-                −
-              </button>
-
-              <span>
-                ${item.qty}
-              </span>
-
-              <button
-                onclick="changeQty(${product.id}, 1)">
-                +
-              </button>
-
-            </div>
-
-            <button
-              class="remove"
-              onclick="removeItem(${product.id})">
-
-              Remove
-
-            </button>
-
-          </div>
-
-        </div>
-
-      `;
-
-    }).join("");
-
-  const total = cart.reduce(
-    (sum, item) => {
-
-      const product = products.find(
-        p => p.id === item.id
-      );
-
-      return sum +
-        product.price * item.qty;
-
-    },
-    0
-  );
-
-  $("#cartTotal").textContent =
-    money(total);
-
-  $("#checkoutTotal").textContent =
-    money(total);
+      <div class="payment-note">Total today: <strong>${money(subtotal)}</strong>. No real payment is processed by this static demo.</div>
+      <button class="primary-btn" type="submit">Place order</button>
+    </form></div></section>`;
+  document.querySelector('#checkout-form').addEventListener('submit', placeOrder);
 }
 
-function changeQty(id, amount) {
-
-  const item = cart.find(
-    item => item.id === id
-  );
-
-  if (!item) return;
-
-  item.qty += amount;
-
-  if (item.qty <= 0) {
-
-    cart = cart.filter(
-      item => item.id !== id
-    );
-
-  }
-
-  saveCart();
-
-  renderCart();
+function placeOrder(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+  const order = { id: `EC-${Date.now().toString().slice(-8)}`, date: new Date().toISOString(), status: 'Received', customer: data, items: state.cart, total: cartSubtotal() };
+  state.orders.unshift(order); state.cart = []; saveJSON('ec_orders', state.orders); saveJSON('ec_cart', state.cart); updateCartBadge();
+  notify('Order placed');
+  state.route='orders'; render();
 }
-
-function removeItem(id) {
-
-  cart = cart.filter(
-    item => item.id !== id
-  );
-
-  saveCart();
-
-  renderCart();
-
-  toast("Item removed");
-}
-
-/* =========================
-   CHECKOUT
-========================= */
-
-function openCheckout() {
-
-  if (!cart.length) {
-
-    toast("Your cart is empty");
-
-    return;
-  }
-
-  renderCart();
-
-  $("#checkoutModal")
-    .classList.add("open");
-}
-
-function closeCheckout() {
-
-  $("#checkoutModal")
-    .classList.remove("open");
-}
-
-/* =========================
-   ORDERS
-========================= */
 
 function renderOrders() {
-
-  const orders = JSON.parse(
-    localStorage.getItem("nexroor_orders") || "[]"
-  );
-
-  if (!orders.length) {
-
-    $("#ordersList").innerHTML = `
-      <div class="empty">
-        No orders yet.
-        Your orders will appear here.
-      </div>
-    `;
-
-    return;
-  }
-
-  $("#ordersList").innerHTML =
-    orders.map(order => `
-
-      <div class="order-card">
-
-        <div>
-
-          <b>${order.id}</b>
-
-          <p>
-            ${order.items} item(s)
-            · ${money(order.total)}
-          </p>
-
-          <p>
-            ${order.name}, ${order.city}
-          </p>
-
-        </div>
-
-        <span>
-          Order received
-        </span>
-
-      </div>
-
-    `).join("");
+  app.innerHTML = `<section class="orders"><div class="section-head" style="padding-top:0"><div><h2>Orders</h2><p>Your orders saved on this device.</p></div></div>
+    ${state.orders.length ? `<div class="order-stack">${state.orders.map(o=>`<article class="order-card"><div><h3>${o.id}</h3><p>${new Date(o.date).toLocaleString('en-IN')}</p><p>${o.items.reduce((n,i)=>n+i.qty,0)} item${o.items.reduce((n,i)=>n+i.qty,0)===1?'':'s'} · ${money(o.total)}</p></div><div class="order-status"><span class="status">${escapeHTML(o.status)}</span></div></article>`).join('')}</div>` : `<div class="empty"><h3>No orders yet</h3><p>Completed orders will appear here.</p><button class="primary-btn" data-route="home">Shop now</button></div>`}
+  </section>`;
 }
 
-/* =========================
-   BUTTON EVENTS
-========================= */
-
-$("#cartBtn").onclick = () => {
-
-  $("#cartDrawer")
-    .classList.add("open");
-
-};
-
-$("#closeCart").onclick = () => {
-
-  $("#cartDrawer")
-    .classList.remove("open");
-
-};
-
-$("#checkoutBtn").onclick =
-  openCheckout;
-
-$("#closeCheckout").onclick =
-  closeCheckout;
-
-$("#closeProduct").onclick =
-  closeProduct;
-
-$("#categoryFilter").onchange =
-  () => renderProducts();
-
-$("#sortFilter").onchange =
-  () => renderProducts();
-
-/* Search button */
-
-$("#searchBtn").onclick = () => {
-
-  const searchBox =
-    $("#searchInput");
-
-  searchBox.focus();
-
-  document
-    .querySelector("#shop")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-
-};
-
-/* Live search */
-
-$("#searchInput").addEventListener(
-  "input",
-  searchProducts
-);
-
-/* Enter key */
-
-$("#searchInput").addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key === "Enter") {
-      searchProducts();
-    }
-
-  }
-);
-
-/* Close product modal when clicking outside */
-
-$("#productModal").addEventListener(
-  "click",
-  event => {
-
-    if (
-      event.target.id === "productModal"
-    ) {
-      closeProduct();
-    }
-
-  }
-);
-
-/* Checkout form */
-
-$("#checkoutForm").onsubmit =
-  function(event) {
-
-    event.preventDefault();
-
-    if (!cart.length) {
-
-      toast("Your cart is empty");
-
-      return;
-    }
-
-    const form =
-      new FormData(event.target);
-
-    const total = cart.reduce(
-      (sum, item) => {
-
-        const product =
-          products.find(
-            p => p.id === item.id
-          );
-
-        return sum +
-          product.price * item.qty;
-
-      },
-      0
-    );
-
-    const orders = JSON.parse(
-      localStorage.getItem(
-        "nexroor_orders"
-      ) || "[]"
-    );
-
-    const orderId =
-      "NX" +
-      Date.now()
-        .toString()
-        .slice(-8);
-
-    const itemCount =
-      cart.reduce(
-        (sum, item) =>
-          sum + item.qty,
-        0
-      );
-
-    orders.unshift({
-
-      id: orderId,
-
-      name: form.get("name"),
-
-      phone: form.get("phone"),
-
-      address: form.get("address"),
-
-      city: form.get("city"),
-
-      pin: form.get("pin"),
-
-      payment: form.get("payment"),
-
-      total: total,
-
-      items: itemCount,
-
-      date:
-        new Date().toISOString()
-
-    });
-
-    localStorage.setItem(
-      "nexroor_orders",
-      JSON.stringify(orders)
-    );
-
-    cart = [];
-
-    saveCart();
-
-    renderCart();
-
-    renderOrders();
-
-    event.target.reset();
-
-    closeCheckout();
-
-    $("#cartDrawer")
-      .classList.remove("open");
-
-    document
-      .querySelector("#orders")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
-
-    toast(
-      "Order placed successfully"
-    );
-  };
-
-/* =========================
-   START WEBSITE
-========================= */
-
-renderCategories();
-
-renderProducts();
-
-renderCart();
-
-renderOrders();
+function addToCart(id, qty=1) {
+  const item = state.cart.find(i => i.id === id);
+  if (item) item.qty += qty; else state.cart.push({id, qty});
+  state.cart = state.cart.filter(i => i.qty > 0); saveJSON('ec_cart', state.cart); updateCartBadge(); notify('Added to cart');
+}
+function buyNow(id) { addToCart(id, 1); navigate('checkout'); }
+
+function navigate(route, productId=null) {
+  state.route = route;
+  if (productId) { state.selectedProduct = productId; state.detailImage=0; state.detailQty=1; }
+  window.history.replaceState({}, '', productId ? `#product/${productId}` : `#${route}`);
+  render(); window.scrollTo({top:0, behavior:'smooth'});
+}
+function render() {
+  if (state.route === 'home') renderHome();
+  else if (state.route === 'product') renderDetail();
+  else if (state.route === 'cart') renderCart();
+  else if (state.route === 'checkout') renderCheckout();
+  else if (state.route === 'orders') renderOrders();
+  updateCartBadge();
+}
+
+function routeFromHash() {
+  const hash = location.hash.replace(/^#/, '');
+  if (hash.startsWith('product/')) { const id=hash.slice(8); if(getProduct(id)){ state.selectedProduct=id; state.route='product'; return; } }
+  if (['cart','checkout','orders'].includes(hash)) state.route=hash; else state.route='home';
+}
+
+document.addEventListener('click', e => {
+  const routeEl = e.target.closest('[data-route]');
+  if (routeEl) return navigate(routeEl.dataset.route);
+  const productEl = e.target.closest('[data-product]');
+  if (productEl) return navigate('product', productEl.dataset.product);
+  const addEl = e.target.closest('[data-add]');
+  if (addEl) return addToCart(addEl.dataset.add, Number(addEl.dataset.detailQty || 1));
+  const buyEl = e.target.closest('[data-buy]');
+  if (buyEl) return buyNow(buyEl.dataset.buy);
+  const cat = e.target.closest('[data-category]');
+  if (cat) { state.category=cat.dataset.category; return renderHome(); }
+  const qty = e.target.closest('[data-qty]');
+  if (qty) { state.detailQty=Math.max(1,state.detailQty+Number(qty.dataset.qty)); return renderDetail(); }
+  const cartQty = e.target.closest('[data-cart-qty]');
+  if (cartQty) { const item=state.cart.find(i=>i.id===cartQty.dataset.id); if(item){ item.qty+=Number(cartQty.dataset.cartQty); if(item.qty<=0) state.cart=state.cart.filter(i=>i!==item); saveJSON('ec_cart',state.cart); renderCart(); } return; }
+  const remove = e.target.closest('[data-remove]');
+  if (remove) { state.cart=state.cart.filter(i=>i.id!==remove.dataset.remove); saveJSON('ec_cart',state.cart); renderCart(); return notify('Removed from cart'); }
+  const gallery = e.target.closest('[data-gallery]');
+  if (gallery) { state.detailImage=Number(gallery.dataset.gallery); return renderDetail(); }
+});
+
+window.addEventListener('hashchange', () => { routeFromHash(); render(); });
+routeFromHash();
+render();
