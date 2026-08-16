@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nexroor — Smart shopping</title>
+  <meta name="description" content="Nexroor — a modern independent ecommerce storefront.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home">NEXROOR</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#orders">Orders</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="cart-btn" id="cartBtn">Cart <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div>
+        <p class="eyebrow">NEXT-GENERATION SHOPPING</p>
+        <h1>Products worth<br><span>bringing home.</span></h1>
+        <p class="hero-copy">Discover useful gadgets, everyday essentials and trending products at prices selected by Nexroor.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#shop">Shop now</a>
+          <a class="secondary" href="#categories">Explore categories</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=1100&q=85" alt="Wireless headphones">
+        <div class="hero-card-label"><b>Featured</b><span>Audio essentials</span></div>
+      </div>
+    </section>
+
+    <section id="categories" class="section">
+      <div class="section-head"><div><p class="eyebrow">BROWSE</p><h2>Shop by category</h2></div></div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="section-head">
+        <div><p class="eyebrow">CURATED FOR YOU</p><h2>Popular products</h2></div>
+        <div class="filters">
+          <select id="categoryFilter"><option value="all">All categories</option></select>
+          <select id="sortFilter">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="orders" class="section orders-section">
+      <div class="section-head"><div><p class="eyebrow">YOUR ACCOUNT</p><h2>Recent orders</h2></div></div>
+      <div id="ordersList" class="orders-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>NEXROOR</b><p>Independent ecommerce storefront.</p></div>
+    <div><a href="#shop">Shop</a><a href="#orders">Orders</a><a href="mailto:support@nexroor.example">Support</a></div>
+    <small>© 2026 Nexroor. Prices and availability are subject to change.</small>
+  </footer>
+
+  <div class="drawer" id="cartDrawer">
+    <div class="drawer-panel">
+      <div class="drawer-head"><h3>Your cart</h3><button id="closeCart">×</button></div>
+      <div id="cartItems"></div>
+      <div class="cart-total"><span>Total</span><b id="cartTotal">₹0</b></div>
+      <button class="primary full" id="checkoutBtn">Proceed to checkout</button>
+    </div>
+  </div>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeCheckout">×</button>
+      <p class="eyebrow">CHECKOUT</p><h2>Delivery details</h2>
+      <form id="checkoutForm">
+        <label>Full name<input name="name" required autocomplete="name"></label>
+        <label>Phone<input name="phone" required inputmode="tel" pattern="[0-9 +()-]{10,}" autocomplete="tel"></label>
+        <label>Address<textarea name="address" required autocomplete="street-address"></textarea></label>
+        <div class="two"><label>City<input name="city" required autocomplete="address-level2"></label><label>PIN code<input name="pin" required inputmode="numeric" pattern="[0-9]{6}" autocomplete="postal-code"></label></div>
+        <label>Payment method
+          <select name="payment"><option>Cash on delivery</option><option>Online payment (configure gateway)</option></select>
+        </label>
+        <div class="checkout-summary"><span>Order total</span><b id="checkoutTotal">₹0</b></div>
+        <button class="primary full" type="submit">Place order</button>
+      </form>
+      <p class="fineprint">This storefront records the order locally in this build. Connect your production payment gateway and backend before accepting real payments.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
