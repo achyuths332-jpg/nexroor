@@ -4,16 +4,16 @@ const products = [
     name: "Wireless ANC Headphones",
     cat: "Electronics",
     price: 2499,
-    old: 3299,
-    img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85"
+    old: 3499,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 2,
     name: "Minimal Smart Watch",
     cat: "Electronics",
     price: 1999,
-    old: 2799,
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
+    old: 2999,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 3,
@@ -21,15 +21,15 @@ const products = [
     cat: "Fashion",
     price: 1299,
     old: 1799,
-    img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 4,
     name: "Portable Coffee Maker",
     cat: "Home & Kitchen",
-    price: 1599,
-    old: 2199,
-    img: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=900&q=85"
+    price: 1799,
+    old: 2499,
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 5,
@@ -37,23 +37,23 @@ const products = [
     cat: "Fashion",
     price: 899,
     old: 1299,
-    img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85"
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 6,
-    name: "Desk Lamp",
+    name: "Modern Desk Lamp",
     cat: "Home & Kitchen",
-    price: 999,
-    old: 1499,
-    img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85"
+    price: 1099,
+    old: 1599,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 7,
     name: "Skincare Essentials",
     cat: "Beauty",
-    price: 1199,
-    old: 1599,
-    img: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85"
+    price: 799,
+    old: 1199,
+    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85"
   },
   {
     id: 8,
@@ -61,15 +61,19 @@ const products = [
     cat: "Electronics",
     price: 1399,
     old: 1899,
-    img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85"
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85"
   }
 ];
 
 const categoryImages = {
-  Electronics: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85",
-  Fashion: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=85",
-  "Home & Kitchen": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=85",
-  Beauty: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85"
+  "Electronics":
+    "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=85",
+  "Fashion":
+    "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=85",
+  "Home & Kitchen":
+    "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=700&q=85",
+  "Beauty":
+    "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
 };
 
 let cart = JSON.parse(localStorage.getItem("nexroor_cart") || "[]");
@@ -80,49 +84,55 @@ function money(value) {
   return "₹" + Number(value).toLocaleString("en-IN");
 }
 
-function save() {
+function saveCart() {
   localStorage.setItem("nexroor_cart", JSON.stringify(cart));
 }
 
 function toast(message) {
   const box = $("#toast");
   if (!box) return;
+
   box.textContent = message;
   box.classList.add("show");
-  setTimeout(() => box.classList.remove("show"), 1800);
+
+  setTimeout(() => {
+    box.classList.remove("show");
+  }, 2200);
 }
 
 function renderCategories() {
-  const cats = [...new Set(products.map(p => p.cat))];
+  const categories = [...new Set(products.map(product => product.cat))];
 
-  $("#categoryGrid").innerHTML = cats.map(cat => `
-    <button class="category" data-cat="${cat}">
-      <img src="${categoryImages[cat]}" alt="${cat}">
-      <span>${cat}</span>
+  $("#categoryGrid").innerHTML = categories.map(category => `
+    <button class="category-card" onclick="selectCategory('${category}')">
+      <img src="${categoryImages[category]}" alt="${category}">
+      <span>${category}</span>
     </button>
   `).join("");
 
   $("#categoryFilter").innerHTML =
     `<option value="all">All categories</option>` +
-    cats.map(cat => `<option value="${cat}">${cat}</option>`).join("");
+    categories.map(category =>
+      `<option value="${category}">${category}</option>`
+    ).join("");
+}
 
-  document.querySelectorAll(".category").forEach(button => {
-    button.onclick = () => {
-      $("#categoryFilter").value = button.dataset.cat;
-      renderProducts();
-      location.hash = "shop";
-    };
+function selectCategory(category) {
+  $("#categoryFilter").value = category;
+  renderProducts();
+  document.querySelector("#shop").scrollIntoView({
+    behavior: "smooth"
   });
 }
 
 function renderProducts() {
   let list = [...products];
 
-  const cat = $("#categoryFilter").value;
+  const category = $("#categoryFilter").value;
   const sort = $("#sortFilter").value;
 
-  if (cat !== "all") {
-    list = list.filter(p => p.cat === cat);
+  if (category !== "all") {
+    list = list.filter(product => product.cat === category);
   }
 
   if (sort === "low") {
@@ -133,27 +143,34 @@ function renderProducts() {
     list.sort((a, b) => b.price - a.price);
   }
 
-  $("#productGrid").innerHTML = list.map(p => `
-    <article class="product">
-      <div class="product-img">
-        <img src="${p.img}" alt="${p.name}" loading="lazy">
-      </div>
+  $("#productGrid").innerHTML = list.map(product => `
+    <article class="product-card">
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+        loading="lazy"
+      >
 
       <div class="product-info">
-        <span class="category-label">${p.cat}</span>
-        <h3>${p.name}</h3>
+        <p class="category">${product.cat}</p>
+
+        <h3>${product.name}</h3>
 
         <div class="price">
-          <b>${money(p.price)}</b>
-          <span class="old">${money(p.old)}</span>
+          <strong>${money(product.price)}</strong>
+          <del>${money(product.old)}</del>
         </div>
 
         <div class="product-actions">
-          <button class="secondary" onclick="addToCart(${p.id})">
+          <button
+            class="secondary"
+            onclick="addToCart(${product.id})">
             Add to cart
           </button>
 
-          <button class="primary" onclick="buyNow(${p.id})">
+          <button
+            class="primary"
+            onclick="buyNow(${product.id})">
             Buy now
           </button>
         </div>
@@ -163,120 +180,154 @@ function renderProducts() {
 }
 
 function addToCart(id) {
-  const item = cart.find(x => x.id === id);
+  const existing = cart.find(item => item.id === id);
 
-  if (item) {
-    item.qty++;
+  if (existing) {
+    existing.qty++;
   } else {
-    cart.push({ id, qty: 1 });
+    cart.push({
+      id: id,
+      qty: 1
+    });
   }
 
-  save();
+  saveCart();
   renderCart();
   toast("Added to cart");
 }
 
 function buyNow(id) {
-  cart = [{ id, qty: 1 }];
-  save();
+  cart = [{
+    id: id,
+    qty: 1
+  }];
+
+  saveCart();
   renderCart();
   openCheckout();
 }
 
 function renderCart() {
-  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  const count = cart.reduce(
+    (sum, item) => sum + item.qty,
+    0
+  );
+
   $("#cartCount").textContent = count;
 
   if (!cart.length) {
-    $("#cartItems").innerHTML =
-      `<p class="empty">Your cart is empty.</p>`;
+    $("#cartItems").innerHTML = `
+      <div class="empty">
+        Your cart is empty.
+      </div>
+    `;
+
     $("#cartTotal").textContent = "₹0";
     $("#checkoutTotal").textContent = "₹0";
     return;
   }
 
-  let total = 0;
-
   $("#cartItems").innerHTML = cart.map(item => {
-    const p = products.find(x => x.id === item.id);
-    const itemTotal = p.price * item.qty;
-    total += itemTotal;
+    const product = products.find(p => p.id === item.id);
 
     return `
-      <div class="cart-line">
-        <img src="${p.img}" alt="${p.name}">
+      <div class="cart-item">
+
+        <img src="${product.image}" alt="${product.name}">
 
         <div>
-          <b>${p.name}</b>
-          <small>${money(p.price)}</small>
+          <b>${product.name}</b>
+          <p>${money(product.price)}</p>
 
-          <div class="qty">
-            <button onclick="changeQty(${p.id}, -1)">−</button>
+          <div class="quantity">
+            <button onclick="changeQty(${product.id}, -1)">−</button>
             <span>${item.qty}</span>
-            <button onclick="changeQty(${p.id}, 1)">+</button>
+            <button onclick="changeQty(${product.id}, 1)">+</button>
           </div>
 
-          <button class="remove" onclick="removeItem(${p.id})">
+          <button
+            class="remove"
+            onclick="removeItem(${product.id})">
             Remove
           </button>
         </div>
+
       </div>
     `;
   }).join("");
+
+  const total = cart.reduce((sum, item) => {
+    const product = products.find(p => p.id === item.id);
+    return sum + product.price * item.qty;
+  }, 0);
 
   $("#cartTotal").textContent = money(total);
   $("#checkoutTotal").textContent = money(total);
 }
 
 function changeQty(id, amount) {
-  const item = cart.find(x => x.id === id);
+  const item = cart.find(item => item.id === id);
+
   if (!item) return;
 
   item.qty += amount;
 
   if (item.qty <= 0) {
-    cart = cart.filter(x => x.id !== id);
+    cart = cart.filter(item => item.id !== id);
   }
 
-  save();
+  saveCart();
   renderCart();
 }
 
 function removeItem(id) {
-  cart = cart.filter(x => x.id !== id);
-  save();
+  cart = cart.filter(item => item.id !== id);
+
+  saveCart();
   renderCart();
+  toast("Item removed");
 }
 
 function openCheckout() {
   if (!cart.length) {
-    toast("Add a product first");
+    toast("Your cart is empty");
     return;
   }
 
   renderCart();
+
   $("#checkoutModal").classList.add("open");
 }
 
+function closeCheckout() {
+  $("#checkoutModal").classList.remove("open");
+}
+
 function renderOrders() {
-  const orders =
-    JSON.parse(localStorage.getItem("nexroor_orders") || "[]");
+  const orders = JSON.parse(
+    localStorage.getItem("nexroor_orders") || "[]"
+  );
 
   if (!orders.length) {
-    $("#ordersList").innerHTML =
-      `<div class="empty">No orders yet. Your placed orders will appear here.</div>`;
+    $("#ordersList").innerHTML = `
+      <div class="empty">
+        No orders yet. Your orders will appear here.
+      </div>
+    `;
     return;
   }
 
   $("#ordersList").innerHTML = orders.map(order => `
-    <div class="order">
+    <div class="order-card">
+
       <div>
         <b>${order.id}</b>
-        <div>${order.items} item(s) · ${money(order.total)}</div>
-        <div>${order.name}, ${order.city}</div>
+        <p>${order.items} item(s) · ${money(order.total)}</p>
+        <p>${order.name}, ${order.city}</p>
       </div>
 
       <span>Order received</span>
+
     </div>
   `).join("");
 }
@@ -291,14 +342,65 @@ $("#closeCart").onclick = () => {
 
 $("#checkoutBtn").onclick = openCheckout;
 
-$("#closeCheckout").onclick = () => {
-  $("#checkoutModal").classList.remove("open");
-};
+$("#closeCheckout").onclick = closeCheckout;
 
 $("#categoryFilter").onchange = renderProducts;
+
 $("#sortFilter").onchange = renderProducts;
 
-$("#checkoutForm").onsubmit = event => {
+$("#searchBtn").onclick = () => {
+  const search = prompt("What are you looking for?");
+
+  if (!search) return;
+
+  const result = products.filter(product =>
+    product.name.toLowerCase().includes(search.toLowerCase()) ||
+    product.cat.toLowerCase().includes(search.toLowerCase())
+  );
+
+  if (!result.length) {
+    toast("No products found");
+    return;
+  }
+
+  $("#categoryFilter").value = "all";
+
+  $("#productGrid").innerHTML = result.map(product => `
+    <article class="product-card">
+      <img src="${product.image}" alt="${product.name}">
+
+      <div class="product-info">
+        <p class="category">${product.cat}</p>
+        <h3>${product.name}</h3>
+
+        <div class="price">
+          <strong>${money(product.price)}</strong>
+          <del>${money(product.old)}</del>
+        </div>
+
+        <div class="product-actions">
+          <button
+            class="secondary"
+            onclick="addToCart(${product.id})">
+            Add to cart
+          </button>
+
+          <button
+            class="primary"
+            onclick="buyNow(${product.id})">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  $("#shop").scrollIntoView({
+    behavior: "smooth"
+  });
+};
+
+$("#checkoutForm").onsubmit = function(event) {
   event.preventDefault();
 
   if (!cart.length) {
@@ -309,81 +411,57 @@ $("#checkoutForm").onsubmit = event => {
   const form = new FormData(event.target);
 
   const total = cart.reduce((sum, item) => {
-    const p = products.find(x => x.id === item.id);
-    return sum + p.price * item.qty;
+    const product = products.find(p => p.id === item.id);
+    return sum + product.price * item.qty;
   }, 0);
 
-  const orders =
-    JSON.parse(localStorage.getItem("nexroor_orders") || "[]");
+  const orders = JSON.parse(
+    localStorage.getItem("nexroor_orders") || "[]"
+  );
+
+  const orderId =
+    "NX" +
+    Date.now().toString().slice(-8);
+
+  const itemCount = cart.reduce(
+    (sum, item) => sum + item.qty,
+    0
+  );
 
   orders.unshift({
-    id: "NX" + Date.now().toString().slice(-8),
+    id: orderId,
     name: form.get("name"),
+    phone: form.get("phone"),
+    address: form.get("address"),
     city: form.get("city"),
-    items: cart.reduce((sum, item) => sum + item.qty, 0),
-    total: total
+    pin: form.get("pin"),
+    payment: form.get("payment"),
+    total: total,
+    items: itemCount,
+    date: new Date().toISOString()
   });
 
-  localStorage.setItem("nexroor_orders", JSON.stringify(orders));
+  localStorage.setItem(
+    "nexroor_orders",
+    JSON.stringify(orders)
+  );
 
   cart = [];
-  save();
+  saveCart();
+
   renderCart();
   renderOrders();
 
   event.target.reset();
-  $("#checkoutModal").classList.remove("open");
+  closeCheckout();
+
+  $("#cartDrawer").classList.remove("open");
+
+  document.querySelector("#orders").scrollIntoView({
+    behavior: "smooth"
+  });
 
   toast("Order placed successfully");
-  location.hash = "orders";
-};
-
-$("#searchBtn").onclick = () => {
-  const query = prompt("What are you looking for?");
-
-  if (!query) return;
-
-  const found = products.filter(p =>
-    p.name.toLowerCase().includes(query.toLowerCase()) ||
-    p.cat.toLowerCase().includes(query.toLowerCase())
-  );
-
-  if (!found.length) {
-    toast("No products found");
-    return;
-  }
-
-  $("#categoryFilter").value = "all";
-
-  $("#productGrid").innerHTML = found.map(p => `
-    <article class="product">
-      <div class="product-img">
-        <img src="${p.img}" alt="${p.name}">
-      </div>
-
-      <div class="product-info">
-        <span class="category-label">${p.cat}</span>
-        <h3>${p.name}</h3>
-
-        <div class="price">
-          <b>${money(p.price)}</b>
-          <span class="old">${money(p.old)}</span>
-        </div>
-
-        <div class="product-actions">
-          <button class="secondary" onclick="addToCart(${p.id})">
-            Add to cart
-          </button>
-
-          <button class="primary" onclick="buyNow(${p.id})">
-            Buy now
-          </button>
-        </div>
-      </div>
-    </article>
-  `).join("");
-
-  location.hash = "shop";
 };
 
 renderCategories();
