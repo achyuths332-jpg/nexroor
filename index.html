@@ -2,51 +2,518 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Everyday home and kitchen products at simple prices.">
-  <title>Everyday Cart — Home & Kitchen</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Nexroor — Smart Shopping</title>
+
+  <meta
+    name="description"
+    content="Nexroor — useful products, trending gadgets and everyday essentials."
+  >
+
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <button class="brand" data-route="home" aria-label="Everyday Cart home">
-        <span class="brand-mark">EC</span>
-        <span>Everyday Cart</span>
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <a class="brand" href="#home">NEXROOR</a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#orders">Orders</a>
+    </nav>
+
+    <div class="actions">
+
+      <button
+        class="icon-btn"
+        id="searchBtn"
+        aria-label="Search products"
+        type="button">
+        ⌕
       </button>
-      <div class="header-actions">
-        <button class="icon-btn" data-route="orders" aria-label="View orders">Orders</button>
-        <button class="cart-btn" data-route="cart" aria-label="Open cart">Cart <span id="cart-count">0</span></button>
-      </div>
+
+      <button
+        class="cart-btn"
+        id="cartBtn"
+        type="button">
+        Cart
+        <span id="cartCount">0</span>
+      </button>
+
     </div>
+
   </header>
 
-  <main id="app" class="container"></main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Everyday Cart</strong>
-        <p>Useful products for everyday living.</p>
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          NEXT-GENERATION SHOPPING
+        </p>
+
+        <h1>
+          Products worth
+          <br>
+          <span>bringing home.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Discover useful gadgets, everyday essentials and
+          trending products at prices selected by Nexroor.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="primary"
+            href="#shop">
+            Shop now
+          </a>
+
+          <a
+            class="secondary"
+            href="#categories">
+            Explore categories
+          </a>
+
+        </div>
+
       </div>
-      <div>
-        <strong>Customer</strong>
-        <button data-route="orders">Orders</button>
-        <button data-route="cart">Cart</button>
+
+
+      <div class="hero-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=1100&q=85"
+          alt="Featured product"
+        >
+
+        <div class="hero-card-label">
+
+          <b>Featured</b>
+
+          <span>
+            Trending essentials
+          </span>
+
+        </div>
+
       </div>
-      <div>
-        <strong>Store note</strong>
-        <p>Product images are added only when approved, stable image URLs are available.</p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section
+      id="categories"
+      class="section">
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            BROWSE
+          </p>
+
+          <h2>
+            Shop by category
+          </h2>
+
+        </div>
+
       </div>
+
+      <div
+        class="category-grid"
+        id="categoryGrid">
+      </div>
+
+    </section>
+
+
+    <!-- SHOP -->
+    <section
+      id="shop"
+      class="section">
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            CURATED FOR YOU
+          </p>
+
+          <h2>
+            Popular products
+          </h2>
+
+        </div>
+
+
+        <div class="filters">
+
+          <select id="categoryFilter">
+            <option value="all">
+              All categories
+            </option>
+          </select>
+
+          <select id="sortFilter">
+
+            <option value="featured">
+              Featured
+            </option>
+
+            <option value="low">
+              Price: low to high
+            </option>
+
+            <option value="high">
+              Price: high to low
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <!-- SEARCH STATUS -->
+      <div
+        id="searchStatus"
+        class="search-status"
+        aria-live="polite">
+      </div>
+
+
+      <!-- PRODUCTS -->
+      <div
+        class="product-grid"
+        id="productGrid">
+      </div>
+
+    </section>
+
+
+    <!-- ORDERS -->
+    <section
+      id="orders"
+      class="section orders-section">
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            YOUR ACCOUNT
+          </p>
+
+          <h2>
+            Recent orders
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div
+        id="ordersList"
+        class="orders-list">
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div>
+
+      <b>NEXROOR</b>
+
+      <p>
+        Independent ecommerce storefront.
+      </p>
+
     </div>
-    <div class="container footer-bottom">© <span id="year"></span> Everyday Cart. All rights reserved.</div>
+
+
+    <div class="footer-links">
+
+      <a href="#shop">
+        Shop
+      </a>
+
+      <a href="#categories">
+        Categories
+      </a>
+
+      <a href="#orders">
+        Orders
+      </a>
+
+      <a href="mailto:support@nexroor.example">
+        Support
+      </a>
+
+    </div>
+
+
+    <small>
+      © 2026 Nexroor. Prices and availability are subject to change.
+    </small>
+
   </footer>
 
-  <script src="app.js" defer></script>
+
+  <!-- CART DRAWER -->
+  <div
+    class="drawer"
+    id="cartDrawer">
+
+    <div class="drawer-panel">
+
+      <div class="drawer-head">
+
+        <h3>
+          Your cart
+        </h3>
+
+        <button
+          id="closeCart"
+          type="button"
+          aria-label="Close cart">
+          ×
+        </button>
+
+      </div>
+
+
+      <div id="cartItems"></div>
+
+
+      <div class="cart-total">
+
+        <span>
+          Total
+        </span>
+
+        <b id="cartTotal">
+          ₹0
+        </b>
+
+      </div>
+
+
+      <button
+        class="primary full"
+        id="checkoutBtn"
+        type="button">
+
+        Proceed to checkout
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PRODUCT DETAILS MODAL -->
+  <div
+    class="modal"
+    id="productModal">
+
+    <div class="modal-card product-modal-card">
+
+      <button
+        class="modal-close"
+        id="closeProduct"
+        type="button"
+        aria-label="Close product details">
+        ×
+      </button>
+
+
+      <div
+        id="productDetails">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- CHECKOUT MODAL -->
+  <div
+    class="modal"
+    id="checkoutModal">
+
+    <div class="modal-card">
+
+      <button
+        class="modal-close"
+        id="closeCheckout"
+        type="button"
+        aria-label="Close checkout">
+        ×
+      </button>
+
+
+      <p class="eyebrow">
+        CHECKOUT
+      </p>
+
+      <h2>
+        Delivery details
+      </h2>
+
+
+      <form id="checkoutForm">
+
+        <label>
+          Full name
+
+          <input
+            name="name"
+            required
+            autocomplete="name">
+        </label>
+
+
+        <label>
+          Phone
+
+          <input
+            name="phone"
+            required
+            inputmode="tel"
+            pattern="[0-9 +()-]{10,}"
+            autocomplete="tel">
+        </label>
+
+
+        <label>
+          Address
+
+          <textarea
+            name="address"
+            required
+            autocomplete="street-address">
+          </textarea>
+
+        </label>
+
+
+        <div class="two">
+
+          <label>
+            City
+
+            <input
+              name="city"
+              required
+              autocomplete="address-level2">
+
+          </label>
+
+
+          <label>
+            PIN code
+
+            <input
+              name="pin"
+              required
+              inputmode="numeric"
+              pattern="[0-9]{6}"
+              autocomplete="postal-code">
+
+          </label>
+
+        </div>
+
+
+        <label>
+
+          Payment method
+
+          <select name="payment">
+
+            <option>
+              Cash on delivery
+            </option>
+
+            <option>
+              Online payment
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <div class="checkout-summary">
+
+          <span>
+            Order total
+          </span>
+
+          <b id="checkoutTotal">
+            ₹0
+          </b>
+
+        </div>
+
+
+        <button
+          class="primary full"
+          type="submit">
+
+          Place order
+
+        </button>
+
+      </form>
+
+
+      <p class="fineprint">
+        This storefront records the order locally in this build.
+        Connect your production payment gateway and backend before
+        accepting real online payments.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div
+    class="toast"
+    id="toast"
+    aria-live="polite">
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="app.js"></script>
+
 </body>
 </html>
