@@ -1,6 +1,12 @@
-assets/
-  cream-front.jpg
-  black-front.jpg
-  floral-front.jpg
-  floral-side.jpg
-  floral-back.jpg
+nexroor
+│
+├── index.html
+├── app.js
+├── styles.css
+│
+└── assets
+    ├── cream-front.jpg       ← actual image
+    ├── black-front.jpg       ← actual image
+    ├── floral-front.jpg      ← actual image
+    ├── floral-side.jpg       ← actual image
+    └── floral-back.jpg       ← actual image
