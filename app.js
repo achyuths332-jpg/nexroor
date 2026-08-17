@@ -1,1331 +1,565 @@
+/* NEXROOR — handbag catalogue replacement
+   Products shown here are based on the supplier/product screenshots supplied in this conversation.
+   Images are stored locally in /assets so the GitHub Pages site does not depend on external image URLs.
+*/
+
 const products = [
   {
     id: 1,
-    name: "Wireless ANC Headphones",
-    cat: "Electronics",
-    price: 2499,
-    old: 3499,
-    description:
-      "Enjoy immersive sound with wireless ANC headphones designed for music, calls and everyday use.",
+    name: "Women's PU Leather Solid Shoulder Zipper Handbag (Cream)",
+    cat: "Women's Bags",
+    price: 319,
+    old: 1225,
+    sku: "BSB48BGWYYYN_1009",
+    images: ["assets/cream-front.jpg"],
+    description: "Women's PU Leather Solid Handbag in cream with a structured dual-handle design and a removable adjustable strap.",
     features: [
-      "Active noise cancellation",
-      "Wireless Bluetooth connection",
-      "Comfortable over-ear design",
-      "Built for everyday listening",
-      "Rechargeable battery"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=85"
+      "Color: Cream",
+      "Material: PU Leather",
+      "No. of Compartments: 2",
+      "Pattern: Solid",
+      "Type: Handbag",
+      "Inner Material: Polyester Lining",
+      "Strap Type: Adjustable - Removable",
+      "Closure Type: Zipper",
+      "Handle Type: Dual Handle"
     ]
   },
-
   {
     id: 2,
-    name: "Minimal Smart Watch",
-    cat: "Electronics",
-    price: 1999,
-    old: 2999,
-    description:
-      "A modern smart watch with a clean design for everyday activity tracking and notifications.",
+    name: "Women's PU Leather Solid Shoulder Zipper Handbag (Black)",
+    cat: "Women's Bags",
+    price: 319,
+    old: 1225,
+    sku: "BSB48BGWYYYN_1008",
+    images: ["assets/black-front.jpg"],
+    description: "Women's PU Leather Solid Handbag in black with dual handles, a removable adjustable strap and zipper closure.",
     features: [
-      "Modern minimal design",
-      "Activity tracking",
-      "Digital display",
-      "Comfortable wrist fit",
-      "Suitable for everyday use"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=900&q=85"
+      "Color: Black",
+      "Material: PU Leather",
+      "No. of Compartments: 3",
+      "Pattern: Solid",
+      "Type: Handbag",
+      "Inner Material: Polyester Lining",
+      "Strap Type: Adjustable - Removable",
+      "Closure Type: Zipper",
+      "Handle Type: Dual Handle"
     ]
   },
-
   {
     id: 3,
-    name: "Everyday Backpack",
-    cat: "Fashion",
-    price: 1299,
-    old: 1799,
-    description:
-      "A practical everyday backpack suitable for work, college, travel and daily carrying.",
-    features: [
-      "Spacious main compartment",
-      "Everyday carry design",
-      "Comfortable shoulder straps",
-      "Suitable for work and travel",
-      "Modern minimalist look"
-    ],
+    name: "Women's Polyurethane Floral Embroidered Crossbody Sling Bag (Tan)",
+    cat: "Women's Bags",
+    price: 399,
+    old: 999,
+    sku: "PID67409",
     images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1556306535-38febf6782e7?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=900&q=85"
-    ]
-  },
-
-  {
-    id: 4,
-    name: "Portable Coffee Maker",
-    cat: "Home & Kitchen",
-    price: 1799,
-    old: 2499,
-    description:
-      "A compact coffee-making solution designed for convenient use at home, work or while travelling.",
-    features: [
-      "Compact design",
-      "Easy to carry",
-      "Suitable for home and travel",
-      "Simple operation",
-      "Modern appearance"
+      "assets/floral-front.jpg",
+      "assets/floral-side.jpg",
+      "assets/floral-back.jpg"
     ],
-    images: [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85"
-    ]
-  },
-
-  {
-    id: 5,
-    name: "Sunglasses Classic",
-    cat: "Fashion",
-    price: 899,
-    old: 1299,
-    description:
-      "Classic everyday sunglasses with a versatile style that works with different outfits.",
+    description: "Tan polyurethane crossbody sling bag with floral embroidery and an adjustable, removable shoulder strap. The product gallery includes front, side and back views.",
     features: [
-      "Classic frame design",
-      "Lightweight construction",
-      "Everyday fashion accessory",
-      "Versatile styling",
-      "Comfortable fit"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1511499767150-5b5e8f5c7d9b?auto=format&fit=crop&w=900&q=85"
-    ]
-  },
-
-  {
-    id: 6,
-    name: "Modern Desk Lamp",
-    cat: "Home & Kitchen",
-    price: 1099,
-    old: 1599,
-    description:
-      "A modern desk lamp designed to add practical lighting to your workspace, study area or bedside table.",
-    features: [
-      "Modern minimalist design",
-      "Suitable for desks and tables",
-      "Compact footprint",
-      "Useful for study and work",
-      "Contemporary appearance"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1534281308479-cf7a0c6f3a58?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=85"
-    ]
-  },
-
-  {
-    id: 7,
-    name: "Skincare Essentials",
-    cat: "Beauty",
-    price: 799,
-    old: 1199,
-    description:
-      "A convenient skincare essentials collection designed for simple everyday personal-care routines.",
-    features: [
-      "Everyday skincare collection",
-      "Easy to use",
-      "Suitable for personal-care routines",
-      "Convenient packaging",
-      "Ideal for everyday use"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85"
-    ]
-  },
-
-  {
-    id: 8,
-    name: "Compact Bluetooth Speaker",
-    cat: "Electronics",
-    price: 1399,
-    old: 1899,
-    description:
-      "A compact Bluetooth speaker made for convenient wireless listening at home, outdoors and while travelling.",
-    features: [
-      "Bluetooth wireless connection",
-      "Compact portable design",
-      "Suitable for everyday listening",
-      "Easy to carry",
-      "Modern appearance"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=85"
+      "Color: Tan",
+      "Material: Polyurethane",
+      "Pattern: Floral Embroidered",
+      "Type: Crossbody Sling Bag",
+      "Strap Type: Adjustable - Removable",
+      "Front floral embroidery",
+      "Multiple product views included"
     ]
   }
 ];
 
 const categoryImages = {
-  "Electronics":
-    "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=85",
-
-  "Fashion":
-    "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=85",
-
-  "Home & Kitchen":
-    "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=700&q=85",
-
-  "Beauty":
-    "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
+  "Women's Bags": "assets/cream-front.jpg"
 };
 
-let cart = JSON.parse(
-  localStorage.getItem("nexroor_cart") || "[]"
-);
-
+let cart = JSON.parse(localStorage.getItem("nexroor_cart") || "[]");
 const $ = selector => document.querySelector(selector);
 
 function money(value) {
   return "₹" + Number(value).toLocaleString("en-IN");
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function saveCart() {
-  localStorage.setItem(
-    "nexroor_cart",
-    JSON.stringify(cart)
-  );
+  localStorage.setItem("nexroor_cart", JSON.stringify(cart));
 }
 
 function toast(message) {
   const box = $("#toast");
-
   if (!box) return;
-
   box.textContent = message;
   box.classList.add("show");
-
-  clearTimeout(window.__toast);
-
-  window.__toast = setTimeout(() => {
-    box.classList.remove("show");
-  }, 2200);
+  clearTimeout(window.__nexroorToast);
+  window.__nexroorToast = setTimeout(() => box.classList.remove("show"), 2200);
 }
 
-
-/* =========================
-   CATEGORIES
-   ========================= */
+function injectStyles() {
+  if ($("#nexroorBagStyles")) return;
+  const style = document.createElement("style");
+  style.id = "nexroorBagStyles";
+  style.textContent = `
+    .product-image-wrap{position:relative;background:#f7f6f3;overflow:hidden;border-radius:18px 18px 0 0;cursor:pointer;}
+    .product-image-wrap img{display:block;width:100%;height:300px;object-fit:contain;background:#fff;}
+    .view-product{position:absolute;right:12px;bottom:12px;background:#111;color:#fff;padding:8px 11px;border-radius:999px;font-size:12px;font-weight:800;opacity:.92;}
+    .product-card{overflow:hidden;}
+    .bag-detail-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start;}
+    .bag-gallery{background:#f7f6f3;border-radius:20px;padding:14px;}
+    .bag-main-image{width:100%;height:470px;object-fit:contain;background:#fff;border-radius:16px;display:block;}
+    .bag-thumbs{display:flex;gap:10px;margin-top:12px;overflow:auto;padding-bottom:3px;}
+    .bag-thumb{flex:0 0 78px;width:78px;height:78px;border:2px solid #e3e3e3;border-radius:12px;background:#fff;padding:3px;}
+    .bag-thumb.active{border-color:#111;}
+    .bag-thumb img{width:100%;height:100%;object-fit:contain;border-radius:8px;display:block;}
+    .bag-sku{font-size:13px;color:#777;margin:10px 0 18px;}
+    .bag-feature-list{padding-left:20px;line-height:1.75;color:#3f4145;}
+    .bag-disclaimer{font-size:12px;line-height:1.55;color:#777;margin-top:18px;padding-top:14px;border-top:1px solid #eee;}
+    .bag-detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;}
+    .nexroor-search-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.55);display:none;align-items:flex-start;justify-content:center;padding:8vh 18px 20px;}
+    .nexroor-search-overlay.open{display:flex;}
+    .nexroor-search-box{width:min(760px,100%);max-height:84vh;overflow:auto;background:#fff;border-radius:22px;padding:24px;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.25);}
+    .nexroor-search-input{width:100%;padding:15px 16px;border:1px solid #d8d8d8;border-radius:13px;font-size:17px;margin:14px 0;outline:none;}
+    .nexroor-search-input:focus{border-color:#111;box-shadow:0 0 0 3px rgba(17,17,17,.08);}
+    .nexroor-search-results{display:grid;gap:8px;}
+    .nexroor-search-result{display:flex;align-items:center;gap:12px;width:100%;border:1px solid #ececec;border-radius:13px;background:#fff;padding:9px;text-align:left;}
+    .nexroor-search-result:hover{background:#f7f7f7;}
+    .nexroor-search-result img{width:68px;height:68px;object-fit:contain;background:#fff;border-radius:9px;flex:none;}
+    .nexroor-close{position:absolute;right:16px;top:10px;border:0;background:none;font-size:32px;line-height:1;}
+    .search-status{min-height:20px;}
+    @media(max-width:760px){
+      .bag-detail-grid{grid-template-columns:1fr;}
+      .bag-main-image{height:340px;}
+      .bag-detail-actions{grid-template-columns:1fr;}
+      .product-image-wrap img{height:250px;}
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 function renderCategories() {
-  const categories = [
-    ...new Set(products.map(product => product.cat))
-  ];
-
-  $("#categoryGrid").innerHTML = categories
-    .map(category => `
-      <button
-        class="category-card"
-        type="button"
-        data-category="${category}"
-      >
-        <img
-          src="${categoryImages[category]}"
-          alt="${category}"
-          loading="lazy"
-        >
-
-        <span>${category}</span>
+  const categories = [...new Set(products.map(p => p.cat))];
+  const grid = $("#categoryGrid");
+  if (grid) {
+    grid.innerHTML = categories.map(category => `
+      <button class="category-card" type="button" data-category="${escapeHtml(category)}">
+        <img src="${categoryImages[category]}" alt="${escapeHtml(category)}" loading="lazy">
+        <span>${escapeHtml(category)}</span>
       </button>
-    `)
-    .join("");
-
-  $("#categoryFilter").innerHTML =
-    `<option value="all">All categories</option>` +
-    categories
-      .map(category =>
-        `<option value="${category}">${category}</option>`
-      )
-      .join("");
-
-  document
-    .querySelectorAll(".category-card")
-    .forEach(button => {
-      button.addEventListener("click", () => {
-        selectCategory(button.dataset.category);
-      });
+    `).join("");
+    grid.querySelectorAll(".category-card").forEach(button => {
+      button.addEventListener("click", () => selectCategory(button.dataset.category));
     });
+  }
+
+  const filter = $("#categoryFilter");
+  if (filter) {
+    filter.innerHTML = `<option value="all">All categories</option>` +
+      categories.map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("");
+  }
 }
 
 function selectCategory(category) {
-  $("#categoryFilter").value = category;
-
-  $("#searchInput").value = "";
-
-  $("#searchStatus").textContent = "";
-
+  if ($("#categoryFilter")) $("#categoryFilter").value = category;
+  if ($("#searchInput")) $("#searchInput").value = "";
+  if ($("#searchStatus")) $("#searchStatus").textContent = "";
   renderProducts();
-
-  $("#shop").scrollIntoView({
-    behavior: "smooth"
-  });
+  $("#shop")?.scrollIntoView({ behavior: "smooth" });
 }
-
-
-/* =========================
-   PRODUCT CARDS
-   ========================= */
 
 function productCard(product) {
   return `
-    <article
-      class="product-card"
-      data-id="${product.id}"
-    >
-
-      <div class="product-image-wrap">
-
-        <img
-          src="${product.images[0]}"
-          alt="${product.name}"
-          loading="lazy"
-        >
-
-        <span class="view-product">
-          View details
-        </span>
-
+    <article class="product-card" data-id="${product.id}">
+      <div class="product-image-wrap" role="button" tabindex="0" aria-label="View ${escapeHtml(product.name)}">
+        <img src="${product.images[0]}" alt="${escapeHtml(product.name)}" loading="lazy">
+        <span class="view-product">View details</span>
       </div>
-
       <div class="product-info">
-
-        <p class="category">
-          ${product.cat}
-        </p>
-
-        <h3>
-          ${product.name}
-        </h3>
-
-        <div class="price">
-
-          <strong>
-            ${money(product.price)}
-          </strong>
-
-          <del>
-            ${money(product.old)}
-          </del>
-
-        </div>
-
+        <p class="category">${escapeHtml(product.cat)}</p>
+        <h3>${escapeHtml(product.name)}</h3>
+        <div class="price"><strong>${money(product.price)}</strong> <del>${money(product.old)}</del></div>
+        <p class="bag-sku">SKU: ${escapeHtml(product.sku)}</p>
         <div class="product-actions">
-
-          <button
-            class="secondary add-btn"
-            type="button"
-          >
-            Add to cart
-          </button>
-
-          <button
-            class="primary buy-btn"
-            type="button"
-          >
-            Buy now
-          </button>
-
+          <button class="secondary add-btn" type="button">Add to cart</button>
+          <button class="primary buy-btn" type="button">Buy now</button>
         </div>
-
       </div>
-
     </article>
   `;
 }
 
+function renderProducts(listOverride = null) {
+  let list = listOverride ? [...listOverride] : [...products];
+  const category = $("#categoryFilter")?.value || "all";
+  const sort = $("#sortFilter")?.value || "featured";
 
-/* =========================
-   RENDER PRODUCTS
-   ========================= */
-
-function renderProducts(list = null) {
-
-  let items = list
-    ? [...list]
-    : [...products];
-
-  const category =
-    $("#categoryFilter").value;
-
-  const sort =
-    $("#sortFilter").value;
-
-  if (!list && category !== "all") {
-    items = items.filter(
-      product => product.cat === category
-    );
+  if (!listOverride && category !== "all") {
+    list = list.filter(product => product.cat === category);
   }
 
-  if (sort === "low") {
-    items.sort(
-      (a, b) => a.price - b.price
-    );
-  }
+  if (sort === "low") list.sort((a, b) => a.price - b.price);
+  if (sort === "high") list.sort((a, b) => b.price - a.price);
 
-  if (sort === "high") {
-    items.sort(
-      (a, b) => b.price - a.price
-    );
-  }
+  const grid = $("#productGrid");
+  if (!grid) return;
+  grid.innerHTML = list.length
+    ? list.map(productCard).join("")
+    : `<div class="empty" style="grid-column:1/-1">No products found.</div>`;
 
-  $("#productGrid").innerHTML =
-    items.length
-      ? items.map(productCard).join("")
-      : `
-        <div class="empty product-empty">
-          No products found.
-        </div>
-      `;
-
-  document
-    .querySelectorAll(".product-card")
-    .forEach(card => {
-
-      const id =
-        Number(card.dataset.id);
-
-      card.addEventListener(
-        "click",
-        () => openProduct(id)
-      );
-
-      card
-        .querySelector(".add-btn")
-        .addEventListener("click", event => {
-
-          event.stopPropagation();
-
-          addToCart(id);
-        });
-
-      card
-        .querySelector(".buy-btn")
-        .addEventListener("click", event => {
-
-          event.stopPropagation();
-
-          buyNow(id);
-        });
-
+  grid.querySelectorAll(".product-card").forEach(card => {
+    const id = Number(card.dataset.id);
+    const image = card.querySelector(".product-image-wrap");
+    image.addEventListener("click", () => openProduct(id));
+    image.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openProduct(id);
+      }
     });
+    card.querySelector(".add-btn").addEventListener("click", event => {
+      event.stopPropagation();
+      addToCart(id);
+    });
+    card.querySelector(".buy-btn").addEventListener("click", event => {
+      event.stopPropagation();
+      buyNow(id);
+    });
+  });
 }
 
+function ensureSearchOverlay() {
+  if ($("#nexroorSearchOverlay")) return;
+  document.body.insertAdjacentHTML("beforeend", `
+    <div class="nexroor-search-overlay" id="nexroorSearchOverlay" role="dialog" aria-modal="true" aria-label="Search products">
+      <div class="nexroor-search-box">
+        <button class="nexroor-close" id="nexroorSearchClose" type="button" aria-label="Close search">×</button>
+        <p class="eyebrow">SEARCH NEXROOR</p>
+        <h2 style="margin:0">Find a handbag</h2>
+        <input class="nexroor-search-input" id="searchInput" type="search" placeholder="Search by product, color, material or category..." autocomplete="off">
+        <div class="nexroor-search-results" id="searchResults"></div>
+      </div>
+    </div>
+  `);
 
-/* =========================
-   PRODUCT DETAILS
-   ========================= */
+  $("#nexroorSearchClose").onclick = closeSearch;
+  $("#nexroorSearchOverlay").addEventListener("click", event => {
+    if (event.target.id === "nexroorSearchOverlay") closeSearch();
+  });
+  $("#searchInput").addEventListener("input", event => updateSearchResults(event.target.value));
+  $("#searchInput").addEventListener("keydown", event => {
+    if (event.key === "Escape") closeSearch();
+  });
+}
+
+function openSearch() {
+  ensureSearchOverlay();
+  $("#nexroorSearchOverlay").classList.add("open");
+  $("#searchInput").value = "";
+  updateSearchResults("");
+  document.body.style.overflow = "hidden";
+  setTimeout(() => $("#searchInput")?.focus(), 30);
+}
+
+function closeSearch() {
+  $("#nexroorSearchOverlay")?.classList.remove("open");
+  if (!$("#productModal")?.classList.contains("open")) document.body.style.overflow = "";
+}
+
+function updateSearchResults(query) {
+  const q = String(query || "").trim().toLowerCase();
+  const results = q
+    ? products.filter(product => `${product.name} ${product.cat} ${product.description} ${product.sku} ${product.features.join(" ")}`.toLowerCase().includes(q))
+    : products;
+
+  const box = $("#searchResults");
+  if (!box) return;
+  box.innerHTML = results.length
+    ? results.map(product => `
+      <button class="nexroor-search-result" type="button" data-search-id="${product.id}">
+        <img src="${product.images[0]}" alt="">
+        <span><b>${escapeHtml(product.name)}</b><br><small>${escapeHtml(product.cat)} · ${money(product.price)}</small></span>
+      </button>
+    `).join("")
+    : `<div class="empty">No products found for “${escapeHtml(query)}”.</div>`;
+
+  box.querySelectorAll("[data-search-id]").forEach(button => {
+    button.addEventListener("click", () => {
+      closeSearch();
+      openProduct(Number(button.dataset.searchId));
+    });
+  });
+}
 
 function openProduct(id) {
-
-  const product =
-    products.find(
-      item => item.id === Number(id)
-    );
-
+  const product = products.find(item => item.id === Number(id));
   if (!product) {
     toast("Product not found");
     return;
   }
 
-  $("#productDetails").innerHTML = `
+  const details = $("#productDetails");
+  if (!details) return;
 
-    <div class="product-detail-layout">
-
-      <div class="product-gallery">
-
-        <div class="main-product-image">
-
-          <img
-            id="mainProductImage"
-            src="${product.images[0]}"
-            alt="${product.name}"
-          >
-
+  details.innerHTML = `
+    <div class="bag-detail-grid">
+      <div class="bag-gallery">
+        <img id="mainProductImage" class="bag-main-image" src="${product.images[0]}" alt="${escapeHtml(product.name)}">
+        <div class="bag-thumbs" aria-label="Product images">
+          ${product.images.map((image, index) => `
+            <button class="bag-thumb ${index === 0 ? "active" : ""}" type="button" data-image="${image}" aria-label="View image ${index + 1}">
+              <img src="${image}" alt="${escapeHtml(product.name)} image ${index + 1}">
+            </button>
+          `).join("")}
         </div>
-
-        <div class="thumbnail-list">
-
-          ${product.images
-            .map(
-              (image, index) => `
-                <button
-                  class="product-thumbnail ${
-                    index === 0
-                      ? "active"
-                      : ""
-                  }"
-                  type="button"
-                  data-image="${image}"
-                >
-
-                  <img
-                    src="${image}"
-                    alt="${product.name} image ${
-                      index + 1
-                    }"
-                  >
-
-                </button>
-              `
-            )
-            .join("")}
-
-        </div>
-
       </div>
-
-
       <div class="product-detail-info">
-
-        <p class="category">
-          ${product.cat}
-        </p>
-
-        <h2>
-          ${product.name}
-        </h2>
-
-        <div class="detail-price">
-
-          <strong>
-            ${money(product.price)}
-          </strong>
-
-          <del>
-            ${money(product.old)}
-          </del>
-
+        <p class="category">${escapeHtml(product.cat)}</p>
+        <h2>${escapeHtml(product.name)}</h2>
+        <div class="detail-price"><strong>${money(product.price)}</strong> <del>${money(product.old)}</del></div>
+        <p class="bag-sku">SKU: ${escapeHtml(product.sku)}</p>
+        <p class="product-description">${escapeHtml(product.description)}</p>
+        <h3>Product information</h3>
+        <ul class="bag-feature-list">${product.features.map(feature => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>
+        <p class="bag-disclaimer">Product colour may vary slightly because of photographic lighting and screen settings.</p>
+        <div class="bag-detail-actions">
+          <button class="secondary" type="button" id="detailAdd">Add to cart</button>
+          <button class="primary" type="button" id="detailBuy">Buy now</button>
         </div>
-
-        <p class="product-description">
-          ${product.description}
-        </p>
-
-        <h3>
-          Product information
-        </h3>
-
-        <ul class="feature-list">
-
-          ${product.features
-            .map(
-              feature =>
-                `<li>${feature}</li>`
-            )
-            .join("")}
-
-        </ul>
-
-        <div class="detail-actions">
-
-          <button
-            class="secondary"
-            type="button"
-            id="detailAdd"
-          >
-            Add to cart
-          </button>
-
-          <button
-            class="primary"
-            type="button"
-            id="detailBuy"
-          >
-            Buy now
-          </button>
-
-        </div>
-
       </div>
-
     </div>
   `;
 
-  $("#productModal")
-    .classList.add("open");
+  $("#productModal").classList.add("open");
+  document.body.style.overflow = "hidden";
 
-
-  /* Product image thumbnails */
-
-  document
-    .querySelectorAll(".product-thumbnail")
-    .forEach(button => {
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          $("#mainProductImage").src =
-            button.dataset.image;
-
-          document
-            .querySelectorAll(".product-thumbnail")
-            .forEach(item =>
-              item.classList.remove("active")
-            );
-
-          button.classList.add("active");
-        }
-      );
-
+  details.querySelectorAll(".bag-thumb").forEach(button => {
+    button.addEventListener("click", () => {
+      $("#mainProductImage").src = button.dataset.image;
+      details.querySelectorAll(".bag-thumb").forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
     });
+  });
 
-
-  /* Detail buttons */
-
-  $("#detailAdd").onclick =
-    () => addToCart(product.id);
-
-  $("#detailBuy").onclick =
-    () => buyNow(product.id);
+  $("#detailAdd").onclick = () => {
+    addToCart(product.id);
+    closeProduct();
+  };
+  $("#detailBuy").onclick = () => {
+    closeProduct();
+    buyNow(product.id);
+  };
 }
 
 function closeProduct() {
-  $("#productModal")
-    .classList.remove("open");
+  $("#productModal")?.classList.remove("open");
+  if (!$("#nexroorSearchOverlay")?.classList.contains("open")) document.body.style.overflow = "";
 }
 
-
-/* =========================
-   CART
-   ========================= */
-
 function addToCart(id) {
-
-  id = Number(id);
-
-  const existing =
-    cart.find(item => item.id === id);
-
-  if (existing) {
-
-    existing.qty++;
-
-  } else {
-
-    cart.push({
-      id: id,
-      qty: 1
-    });
-
-  }
-
+  const numericId = Number(id);
+  const item = cart.find(entry => entry.id === numericId);
+  if (item) item.qty += 1;
+  else cart.push({ id: numericId, qty: 1 });
   saveCart();
-
   renderCart();
-
   toast("Added to cart");
 }
 
-
 function buyNow(id) {
-
-  cart = [
-    {
-      id: Number(id),
-      qty: 1
-    }
-  ];
-
+  cart = [{ id: Number(id), qty: 1 }];
   saveCart();
-
   renderCart();
-
-  closeProduct();
-
   openCheckout();
 }
 
-
 function renderCart() {
-
-  const count =
-    cart.reduce(
-      (sum, item) =>
-        sum + item.qty,
-      0
-    );
-
-  $("#cartCount").textContent =
-    count;
-
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  if ($("#cartCount")) $("#cartCount").textContent = count;
 
   if (!cart.length) {
-
-    $("#cartItems").innerHTML = `
-      <div class="empty">
-        Your cart is empty.
-      </div>
-    `;
-
-    $("#cartTotal").textContent =
-      "₹0";
-
-    $("#checkoutTotal").textContent =
-      "₹0";
-
+    $("#cartItems").innerHTML = `<div class="empty">Your cart is empty.</div>`;
+    $("#cartTotal").textContent = "₹0";
+    $("#checkoutTotal").textContent = "₹0";
     return;
   }
 
-
-  $("#cartItems").innerHTML =
-    cart
-      .map(item => {
-
-        const product =
-          products.find(
-            p => p.id === item.id
-          );
-
-        if (!product) {
-          return "";
-        }
-
-        return `
-          <div class="cart-item">
-
-            <img
-              src="${product.images[0]}"
-              alt="${product.name}"
-            >
-
-            <div class="cart-item-info">
-
-              <b>
-                ${product.name}
-              </b>
-
-              <p>
-                ${money(product.price)}
-              </p>
-
-              <div class="quantity">
-
-                <button
-                  type="button"
-                  data-minus="${product.id}"
-                >
-                  −
-                </button>
-
-                <span>
-                  ${item.qty}
-                </span>
-
-                <button
-                  type="button"
-                  data-plus="${product.id}"
-                >
-                  +
-                </button>
-
-              </div>
-
-              <button
-                class="remove"
-                type="button"
-                data-remove="${product.id}"
-              >
-                Remove
-              </button>
-
-            </div>
-
+  $("#cartItems").innerHTML = cart.map(item => {
+    const product = products.find(p => p.id === item.id);
+    if (!product) return "";
+    return `
+      <div class="cart-item">
+        <img src="${product.images[0]}" alt="${escapeHtml(product.name)}">
+        <div class="cart-item-info">
+          <button type="button" style="border:0;background:none;padding:0;text-align:left;font-weight:800;cursor:pointer" data-open-cart-product="${product.id}">${escapeHtml(product.name)}</button>
+          <p>${money(product.price)}</p>
+          <div class="quantity">
+            <button type="button" data-minus="${product.id}">−</button>
+            <span>${item.qty}</span>
+            <button type="button" data-plus="${product.id}">+</button>
           </div>
-        `;
-      })
-      .join("");
+          <button class="remove" type="button" data-remove="${product.id}">Remove</button>
+        </div>
+      </div>
+    `;
+  }).join("");
 
+  $("#cartItems").querySelectorAll("[data-minus]").forEach(button => {
+    button.onclick = () => changeQty(Number(button.dataset.minus), -1);
+  });
+  $("#cartItems").querySelectorAll("[data-plus]").forEach(button => {
+    button.onclick = () => changeQty(Number(button.dataset.plus), 1);
+  });
+  $("#cartItems").querySelectorAll("[data-remove]").forEach(button => {
+    button.onclick = () => removeItem(Number(button.dataset.remove));
+  });
+  $("#cartItems").querySelectorAll("[data-open-cart-product]").forEach(button => {
+    button.onclick = () => openProduct(Number(button.dataset.openCartProduct));
+  });
 
-  document
-    .querySelectorAll("[data-minus]")
-    .forEach(button => {
-
-      button.onclick = () => {
-
-        changeQty(
-          Number(button.dataset.minus),
-          -1
-        );
-
-      };
-
-    });
-
-
-  document
-    .querySelectorAll("[data-plus]")
-    .forEach(button => {
-
-      button.onclick = () => {
-
-        changeQty(
-          Number(button.dataset.plus),
-          1
-        );
-
-      };
-
-    });
-
-
-  document
-    .querySelectorAll("[data-remove]")
-    .forEach(button => {
-
-      button.onclick = () => {
-
-        removeItem(
-          Number(button.dataset.remove)
-        );
-
-      };
-
-    });
-
-
-  const total =
-    cart.reduce(
-      (sum, item) => {
-
-        const product =
-          products.find(
-            p => p.id === item.id
-          );
-
-        return (
-          sum +
-          (
-            product
-              ? product.price * item.qty
-              : 0
-          )
-        );
-
-      },
-      0
-    );
-
-
-  $("#cartTotal").textContent =
-    money(total);
-
-  $("#checkoutTotal").textContent =
-    money(total);
+  const total = cart.reduce((sum, item) => {
+    const product = products.find(p => p.id === item.id);
+    return product ? sum + product.price * item.qty : sum;
+  }, 0);
+  $("#cartTotal").textContent = money(total);
+  $("#checkoutTotal").textContent = money(total);
 }
-
 
 function changeQty(id, amount) {
-
-  const item =
-    cart.find(
-      product => product.id === id
-    );
-
+  const item = cart.find(entry => entry.id === Number(id));
   if (!item) return;
-
   item.qty += amount;
-
-  if (item.qty <= 0) {
-
-    cart =
-      cart.filter(
-        product => product.id !== id
-      );
-
-  }
-
+  if (item.qty <= 0) cart = cart.filter(entry => entry.id !== Number(id));
   saveCart();
-
   renderCart();
 }
 
-
 function removeItem(id) {
-
-  cart =
-    cart.filter(
-      item => item.id !== Number(id)
-    );
-
+  cart = cart.filter(entry => entry.id !== Number(id));
   saveCart();
-
   renderCart();
-
   toast("Item removed");
 }
 
-
-/* =========================
-   CHECKOUT
-   ========================= */
-
 function openCheckout() {
-
   if (!cart.length) {
-
     toast("Your cart is empty");
-
     return;
   }
-
   renderCart();
-
-  $("#checkoutModal")
-    .classList.add("open");
+  $("#checkoutModal").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
-
 
 function closeCheckout() {
-
-  $("#checkoutModal")
-    .classList.remove("open");
+  $("#checkoutModal")?.classList.remove("open");
+  if (!$("#productModal")?.classList.contains("open")) document.body.style.overflow = "";
 }
-
-
-/* =========================
-   ORDERS
-   ========================= */
 
 function renderOrders() {
-
-  const orders =
-    JSON.parse(
-      localStorage.getItem(
-        "nexroor_orders"
-      ) || "[]"
-    );
-
-
-  if (!orders.length) {
-
-    $("#ordersList").innerHTML = `
-      <div class="empty">
-        No orders yet.
-        Your orders will appear here.
+  const orders = JSON.parse(localStorage.getItem("nexroor_orders") || "[]");
+  const list = $("#ordersList");
+  if (!list) return;
+  list.innerHTML = orders.length
+    ? orders.map(order => `
+      <div class="order-card">
+        <div><b>${escapeHtml(order.id)}</b><p>${order.items} item(s) · ${money(order.total)}</p><p>${escapeHtml(order.name)}, ${escapeHtml(order.city)}</p></div>
+        <span>Order received</span>
       </div>
-    `;
-
-    return;
-  }
-
-
-  $("#ordersList").innerHTML =
-    orders
-      .map(
-        order => `
-          <div class="order-card">
-
-            <div>
-
-              <b>
-                ${order.id}
-              </b>
-
-              <p>
-                ${order.items} item(s)
-                ·
-                ${money(order.total)}
-              </p>
-
-              <p>
-                ${order.name},
-                ${order.city}
-              </p>
-
-            </div>
-
-            <span>
-              Order received
-            </span>
-
-          </div>
-        `
-      )
-      .join("");
+    `).join("")
+    : `<div class="empty">No orders yet. Your orders will appear here.</div>`;
 }
 
-
-/* =========================
-   SEARCH
-   ========================= */
-
-function performSearch() {
-
-  const search =
-    $("#searchInput")
-      .value
-      .trim()
-      .toLowerCase();
-
-
-  if (!search) {
-
-    $("#searchStatus")
-      .textContent = "";
-
-    renderProducts();
-
-    return;
-  }
-
-
-  $("#categoryFilter")
-    .value = "all";
-
-
-  const results =
-    products.filter(product => {
-
-      const searchableText = [
-        product.name,
-        product.cat,
-        product.description,
-        ...product.features
-      ]
-        .join(" ")
-        .toLowerCase();
-
-      return searchableText.includes(search);
-
-    });
-
-
-  if (results.length) {
-
-    $("#searchStatus")
-      .textContent =
-        `Showing ${results.length} result${
-          results.length === 1
-            ? ""
-            : "s"
-        } for "${
-          $("#searchInput").value.trim()
-        }"`;
-
-  } else {
-
-    $("#searchStatus")
-      .textContent =
-        `No products found for "${
-          $("#searchInput").value.trim()
-        }"`;
-
-  }
-
-
-  renderProducts(results);
-
-  $("#shop").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-
-/* =========================
-   BUTTON EVENTS
-   ========================= */
-
-$("#cartBtn").onclick = () => {
-
-  $("#cartDrawer")
-    .classList.add("open");
-
-};
-
-
-$("#closeCart").onclick = () => {
-
-  $("#cartDrawer")
-    .classList.remove("open");
-
-};
-
-
-$("#checkoutBtn").onclick =
-  openCheckout;
-
-
-$("#closeCheckout").onclick =
-  closeCheckout;
-
-
-$("#closeProduct").onclick =
-  closeProduct;
-
-
-$("#categoryFilter").onchange =
-  () => {
-
-    $("#searchInput").value = "";
-
-    $("#searchStatus")
-      .textContent = "";
-
-    renderProducts();
-
-  };
-
-
-$("#sortFilter").onchange =
-  () => {
-
-    renderProducts();
-
-  };
-
-
-$("#searchBtn").onclick =
-  performSearch;
-
-
-$("#searchInput").addEventListener(
-  "input",
-  performSearch
-);
-
-
-$("#searchInput").addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key === "Enter") {
-
-      performSearch();
-
-    }
-
-  }
-);
-
-
-/* =========================
-   MODAL CLICK OUTSIDE
-   ========================= */
-
-$("#productModal")
-  .addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target ===
-        $("#productModal")
-      ) {
-
-        closeProduct();
-
-      }
-
-    }
-  );
-
-
-$("#checkoutModal")
-  .addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target ===
-        $("#checkoutModal")
-      ) {
-
-        closeCheckout();
-
-      }
-
-    }
-  );
-
-
-/* =========================
-   ESCAPE KEY
-   ========================= */
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key === "Escape") {
-
-      closeProduct();
-
-      closeCheckout();
-
-      $("#cartDrawer")
-        .classList.remove("open");
-
-    }
-
-  }
-);
-
-
-/* =========================
-   CHECKOUT FORM
-   ========================= */
-
-$("#checkoutForm").onsubmit =
-  event => {
-
+function setupCheckout() {
+  const form = $("#checkoutForm");
+  if (!form) return;
+  form.onsubmit = event => {
     event.preventDefault();
-
-
     if (!cart.length) {
-
       toast("Your cart is empty");
-
       return;
     }
 
-
-    const form =
-      new FormData(event.target);
-
-
-    const total =
-      cart.reduce(
-        (sum, item) => {
-
-          const product =
-            products.find(
-              p => p.id === item.id
-            );
-
-          return (
-            sum +
-            (
-              product
-                ? product.price *
-                  item.qty
-                : 0
-            )
-          );
-
-        },
-        0
-      );
-
-
-    const orders =
-      JSON.parse(
-        localStorage.getItem(
-          "nexroor_orders"
-        ) || "[]"
-      );
-
-
-    const orderId =
-      "NX" +
-      Date.now()
-        .toString()
-        .slice(-8);
-
-
-    const itemCount =
-      cart.reduce(
-        (sum, item) =>
-          sum + item.qty,
-        0
-      );
-
+    const data = new FormData(form);
+    const total = cart.reduce((sum, item) => {
+      const product = products.find(p => p.id === item.id);
+      return product ? sum + product.price * item.qty : sum;
+    }, 0);
+    const orders = JSON.parse(localStorage.getItem("nexroor_orders") || "[]");
+    const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+    const orderId = "NX" + Date.now().toString().slice(-8);
 
     orders.unshift({
-
       id: orderId,
-
-      name:
-        form.get("name"),
-
-      phone:
-        form.get("phone"),
-
-      address:
-        form.get("address"),
-
-      city:
-        form.get("city"),
-
-      pin:
-        form.get("pin"),
-
-      payment:
-        form.get("payment"),
-
-      total: total,
-
-      items:
-        itemCount,
-
-      date:
-        new Date().toISOString()
-
+      name: data.get("name"),
+      phone: data.get("phone"),
+      address: data.get("address"),
+      city: data.get("city"),
+      pin: data.get("pin"),
+      payment: data.get("payment"),
+      total,
+      items: itemCount,
+      date: new Date().toISOString()
     });
 
-
-    localStorage.setItem(
-      "nexroor_orders",
-      JSON.stringify(orders)
-    );
-
-
+    localStorage.setItem("nexroor_orders", JSON.stringify(orders));
     cart = [];
-
     saveCart();
-
     renderCart();
-
     renderOrders();
-
-    event.target.reset();
-
+    form.reset();
     closeCheckout();
-
-    $("#cartDrawer")
-      .classList.remove("open");
-
-
-    $("#orders").scrollIntoView({
-      behavior: "smooth"
-    });
-
-
-    toast(
-      "Order placed successfully"
-    );
-
+    $("#cartDrawer")?.classList.remove("open");
+    $("#orders")?.scrollIntoView({ behavior: "smooth" });
+    toast("Order placed successfully");
   };
+}
 
+function init() {
+  injectStyles();
 
-/* =========================
-   INITIALIZE WEBSITE
-   ========================= */
+  $("#cartBtn")?.addEventListener("click", () => $("#cartDrawer")?.classList.add("open"));
+  $("#closeCart")?.addEventListener("click", () => $("#cartDrawer")?.classList.remove("open"));
+  $("#checkoutBtn")?.addEventListener("click", openCheckout);
+  $("#closeCheckout")?.addEventListener("click", closeCheckout);
+  $("#closeProduct")?.addEventListener("click", closeProduct);
+  $("#searchBtn")?.addEventListener("click", openSearch);
 
-renderCategories();
+  $("#categoryFilter")?.addEventListener("change", () => {
+    if ($("#searchStatus")) $("#searchStatus").textContent = "";
+    renderProducts();
+  });
+  $("#sortFilter")?.addEventListener("change", renderProducts);
 
-renderProducts();
+  ["#productModal", "#checkoutModal"].forEach(selector => {
+    $(selector)?.addEventListener("click", event => {
+      if (event.target === $(selector)) {
+        selector === "#productModal" ? closeProduct() : closeCheckout();
+      }
+    });
+  });
 
-renderCart();
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeProduct();
+      closeCheckout();
+      closeSearch();
+      $("#cartDrawer")?.classList.remove("open");
+    }
+  });
 
-renderOrders();
+  setupCheckout();
+  renderCategories();
+  renderProducts();
+  renderCart();
+  renderOrders();
+}
+
+init();
