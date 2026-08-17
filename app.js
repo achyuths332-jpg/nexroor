@@ -9,8 +9,8 @@ const products = [
     category: "Bags",
     price: 899,
     oldPrice: 1499,
-    image: "assets/cream-front.jpg",
-    images: ["assets/cream-front.jpg"],
+    image: "cream-front.jpg",
+    images: ["cream-front.jpg"],
     description:
       "A stylish everyday cream bag designed for casual use, shopping, travel and daily essentials.",
     features: [
@@ -27,8 +27,8 @@ const products = [
     category: "Bags",
     price: 899,
     oldPrice: 1499,
-    image: "assets/black-front.jpg",
-    images: ["assets/black-front.jpg"],
+    image: "black-front.jpg",
+    images: ["black-front.jpg"],
     description:
       "A classic black everyday bag with a simple and versatile look that works with different outfits.",
     features: [
@@ -45,11 +45,11 @@ const products = [
     category: "Bags",
     price: 999,
     oldPrice: 1699,
-    image: "assets/floral-front.jpg",
+    image: "floral-front.jpg",
     images: [
-      "assets/floral-front.jpg",
-      "assets/floral-side.jpg",
-      "assets/floral-back.jpg"
+      "floral-front.jpg",
+      "floral-side.jpg",
+      "floral-back.jpg"
     ],
     description:
       "A stylish floral-patterned bag with multiple views so you can see the front, side and back before buying.",
